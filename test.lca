@@ -5,6 +5,7 @@ process "foo" {
 
     inputs {
         - "bar" 3 kg
+        - "electricity" 10 kg
     }
 
     emissions {
@@ -12,23 +13,33 @@ process "foo" {
     }
 }
 
-process "bar" {
+process "electricity" {
     products {
-        - "bar" 2 kg
+        - "electricity" 1 kg
     }
 
     emissions {
-        - "co2" 2 kg
+        - "co2" 3 kg
     }
 }
 
-substance "co2" {
-    type: emissions
-    unit: kg
+process "bar" {
+     products {
+         - "bar" 2 kg
+     }
 
-    factors: ef31 {
-        - "CC kgCO2" 1.0
-        - "IR kBq" 1.5
-    }
+     emissions {
+         - "co2" 3.5 kg
+     }
+ }
+
+substance "co2" {
+type: emissions
+unit: kg
+
+factors: ef31 {
+- "CC kgCO2" 1.0
+- "IR kBq" 1.5
+}
 }
 

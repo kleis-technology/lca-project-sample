@@ -1,0 +1,34 @@
+process "foo" {
+    products {
+        - "foo" 1 kg
+    }
+
+    inputs {
+        - "bar" 3 kg
+    }
+
+    emissions {
+        - "co2" 500 g
+    }
+}
+
+process "bar" {
+    products {
+        - "bar" 2 kg
+    }
+
+    emissions {
+        - "co2" 2 kg
+    }
+}
+
+substance "co2" {
+    type: emissions
+    unit: kg
+
+    factors: ef31 {
+        - "CC kgCO2" 1.0
+        - "IR kBq" 1.5
+    }
+}
+

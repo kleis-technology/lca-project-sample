@@ -1,0 +1,8 @@
+substance "co2" {
+    type: emissions
+    unit: kg
+
+    factors: ef31 {
+        - "CC" 1.0
+    }
+}

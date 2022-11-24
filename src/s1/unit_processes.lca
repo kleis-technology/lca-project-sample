@@ -1,6 +1,7 @@
 process carrot_production {
     parameters {
         - R1: 2.0
+        - qElec : 3.0
     }
 
     products {
@@ -8,12 +9,12 @@ process carrot_production {
     }
 
     inputs {
-        - electricity 1 kJ
+        - electricity ${qElec} kJ
         - water 1 l
     }
 
     emissions {
-        - "HFC-32, air, lower stratosphere and upper troposphere" ${2 * sin(R1)^2} kg
+        - "HFC-32, air, lower stratosphere and upper troposphere" ${2 * sin(R1)^2 + qElec^2} kg
     }
 }
 

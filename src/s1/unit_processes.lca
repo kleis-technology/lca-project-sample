@@ -1,0 +1,39 @@
+process carrot_production {
+    parameters {
+        - R1: 2.0
+    }
+
+    products {
+        - carrot 1 kg
+    }
+
+    inputs {
+        - electricity 1 kJ
+        - water 1 l
+    }
+
+    emissions {
+        - "HFC-32, air, lower stratosphere and upper troposphere" ${2 * sin(R1)^2} kg
+    }
+}
+
+process electricity_production {
+    products {
+        - electricity 1 kJ
+    }
+
+    emissions {
+        - "(+)-bornan-2-one, air, urban air close to ground" 1.0 kg
+    }
+}
+
+process water_production {
+    products {
+        - water 1 l
+    }
+
+    emissions {
+        - "HFC-23, soil, agricultural" 1 kg
+        - "HFC-32, air, lower stratosphere and upper troposphere" 1 kg
+    }
+}

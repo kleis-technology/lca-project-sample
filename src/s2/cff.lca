@@ -1,0 +1,43 @@
+/*
+system "bottle mix" {
+    params {
+        - virgin_production: Process
+        - secondary_production: Process
+    }
+
+    out {
+        - "bottle" u
+    }
+
+    local {
+        - "virgin bottle" u
+        - "secondary bottle" u
+    }
+
+    call "mix" (
+        unit = kg,
+        R1 = 0.345,
+//        "manufactured" = "manufactured",
+//        "m" = "bottle",
+//        "v" = "virgin bottle",
+//        "s" = "secondary bottle",
+    )
+}
+
+process "mix" {
+    params {
+        - R: Number
+        - unit: Unit
+    }
+
+    products {
+        - "m" 1 unit
+    }
+
+    inputs {
+        - "v" (1 - R1) unit
+        - "s" R1 unit
+    }
+}
+
+*/

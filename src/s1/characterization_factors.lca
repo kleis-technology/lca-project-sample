@@ -1,4 +1,6 @@
-substance "co2" {
+substance co2 {
+    name: "co2"
+    compartment: "air"
     type: emissions
     unit: kg
 

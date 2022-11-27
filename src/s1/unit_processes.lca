@@ -10,11 +10,13 @@ process carrot_production {
 
     inputs {
         - electricity ${qElec} kJ
-        - water 1 l
+        - water ${3.0} l
+        - "1,1-difluoroethane, HFC-152a {RoW}| production | Cut-off, U" 3 kg
     }
 
     emissions {
-        - "HFC-32, air, lower stratosphere and upper troposphere" ${2 * sin(R1)^2 + qElec^2} kg
+        - "HFC-32, air, lower stratosphere and upper troposphere" ${- 2 * sin(R1)^2 - qElec^2} kg
+        -  "warfarin, air, non-urban high stack" 3 kg
     }
 }
 

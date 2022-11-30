@@ -1,0 +1,13 @@
+package salad
+
+import carrot.carrot
+
+process salad_production {
+    products {
+        - salad 1 one
+    }
+
+    inputs {
+        - carrot 3 kg
+    }
+}

@@ -1,0 +1,57 @@
+package underdetermined
+
+/*
+    O : observable matrix, dim p x obs
+    C : controllable matrix, dim p x ctrl
+    F : factors of observable flows, dim obs x ctrl
+
+    OF + C = 0
+    OF = -C
+
+    here O = (O_pa
+              O_qa)
+           = ( 1
+               1 )
+    F = ( F_ab )
+    C = ( C_pb
+          C_qb )
+      = ( -1
+          -2 )
+
+    system
+    F_ab = 1
+    F_ab = 2
+
+    overdetermined system
+    pseudo inverse finds the solution F with minimal score || OF + C ||_2
+    q = (F_ab - 1)**2 + (F_ab - 2)**2
+    dq = 4F_ab -6 = 0
+    F_ab = 3/2
+*/
+
+query {
+    out {
+        - a
+    }
+    in {
+        - b
+    }
+}
+
+process p {
+    products {
+        - a 1 kg
+    }
+    inputs {
+        - b 1 kg
+    }
+}
+
+process q {
+    products {
+        - a 1 kg
+    }
+    inputs {
+        - b 2 kg
+    }
+}

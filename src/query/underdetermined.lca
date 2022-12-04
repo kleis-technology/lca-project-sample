@@ -1,0 +1,46 @@
+package underdetermined
+
+/*
+    O : observable matrix, dim p x obs
+    C : controllable matrix, dim p x ctrl
+    F : factors of observable flows, dim obs x ctrl
+
+    OF + C = 0
+    OF = -C
+
+    here O = (O_pa O_pb) = (1  -1)
+    F = ( F_ac
+          F_bc )
+    C = ( C_pc ) = ( -3 )
+
+    F_ac - F_bc = 3
+    underdetermined system
+    pseudo inverse finds the solution F with minimal norm || F ||_2
+    q = F_ac**2 + (F_ac - 3)**2
+    dq = 4F_ac -6 = 0
+    F_ac = 3/2
+    F_bc = -3/2
+*/
+
+query {
+    out {
+        - a
+        - b
+    }
+    in {
+        - c
+    }
+}
+
+
+process p {
+    products {
+        - a 1 kg
+    }
+    inputs {
+        - b 1 kg
+    }
+    emissions {
+        - c 3 kg
+    }
+}

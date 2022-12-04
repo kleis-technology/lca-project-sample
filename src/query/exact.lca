@@ -1,0 +1,41 @@
+package underdetermined
+
+/*
+    O : observable matrix, dim p x obs
+    C : controllable matrix, dim p x ctrl
+    F : factors of observable flows, dim obs x ctrl
+
+    OF + C = 0
+    OF = -C
+
+    here O = (O_pa) = (1)
+    F = ( F_ab F_ac )
+    C = ( C_pb C_pc ) = ( -1 -3 )
+
+    F_ab = 1
+    F_ac = 3
+    exact system
+*/
+
+query {
+    out {
+        - a
+    }
+    in {
+        - b
+        - c
+    }
+}
+
+
+process p {
+    products {
+        - a 1 kg
+    }
+    inputs {
+        - b 1 kg
+    }
+    emissions {
+        - c 3 kg
+    }
+}

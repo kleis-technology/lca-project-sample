@@ -1,6 +1,4 @@
-package salad
-
-import carrot.carrot
+package sample
 
 process salad_production {
     products {

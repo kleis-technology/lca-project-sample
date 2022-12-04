@@ -1,0 +1,130 @@
+package mci
+
+process manufacture {
+    parameters {
+        - FR : 0.0 // fraction of recycled content
+        - FU : 0 // fraction of reused content
+        - FS : 0.15 // fraction of biological feedstock
+    }
+
+    products {
+        - mass_manufactured 1 kg
+    }
+
+    inputs {
+        - virgin_feedstock ${1- FR - FU - FS} kg
+        - recycled_feedstock ${FR} kg
+        - reused_feedstock ${FU} kg
+        - biological_feedstock ${FS} kg
+    }
+}
+
+process user {
+    parameters {
+        - CC : 0.0 // fraction for composting
+        - I : 1.0 // does bio material satisfy inclusion condition
+        - EE : 0.75 // efficiency of the energy recovery process for material satisfying inclusion condition
+        - BC : 0.45 // typical carbon content of bio material
+        - CE : ${I * EE * BC} // fraction for energy recovery of material satisfying the inclusion condition
+        - CR : 0.06 // fraction for recycling
+        - CU : 0.0 // fraction for reuse
+        - X : 1.0 // (L/Lav)/(U/Uav)
+    }
+
+    products {
+        - material_for_composting ${CC} kg
+        - bio_material_for_energy_recovery ${CE} kg
+        - material_for_recycling ${CR} kg
+        - material_for_reuse ${CU} kg
+        - waste_W0 ${1 - CR - CU - CC - CE} kg
+    }
+
+    inputs {
+        - mass_manufactured ${X} kg
+    }
+}
+
+process recycling {
+    parameters {
+        - EC : 0.31 // efficiency of the recycling process
+    }
+    products {
+        - input_for_recycled_feedstock_production ${EC} kg
+        - waste_WC ${1 - EC} kg
+    }
+    inputs {
+        - material_for_recycling 1 kg
+    }
+}
+
+process recycled_feedstock_production {
+    parameters {
+        - EF : 0.75 // efficiency of the recycled content production process
+    }
+
+    products {
+        - recycled_feedstock ${EF} kg
+        - waste_WF ${1 - EF} kg
+    }
+
+    inputs {
+        - input_for_recycled_feedstock_production 1 kg
+    }
+}
+
+process reuse {
+    products {
+        - reused_feedstock 1 kg
+    }
+    inputs {
+        - material_for_reuse 1 kg
+    }
+}
+
+process unrecoverable_waste {
+    products {
+        - unrecoverable_waste 2 kg
+    }
+
+    inputs {
+        - waste_W0 1 kg
+        - waste_WF 0.5 kg
+        - waste_WC 0.5 kg
+    }
+}
+
+/*
+    LFI = (V + W) / ( 2M + (WF - WC)/2 )
+    (2M + 0.5 * (WF - WC)) * LFI = V + W
+*/
+
+process lfi_out {
+    products {
+        - linear_mass 1 one
+    }
+    inputs {
+        - virgin_feedstock 1 kg
+        - unrecoverable_waste 1 kg
+    }
+}
+
+process lfi_in {
+    products {
+        - circular_mass 1 one
+    }
+    inputs {
+        - mass_manufactured 2 kg
+        - waste_WF 0.5 kg
+        - waste_WC -0.5 kg
+    }
+}
+
+query {
+    out {
+        - mass_manufactured
+    }
+    in {
+        - linear_mass
+        - circular_mass
+    }
+}

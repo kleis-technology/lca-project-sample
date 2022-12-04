@@ -1,11 +1,4 @@
-package carrot
-
-/*
-import ef31."HFC-32, air, lower stratosphere and upper troposphere"
-import ef31."warfarin, air, non-urban high stack"
-import ef31."(+)-bornan-2-one, air, urban air close to ground"
-import ef31."HFC-23, soil, agricultural"
-*/
+package sample
 
 import ef31.*
 

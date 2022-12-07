@@ -15,9 +15,9 @@ process main {
 
 process manufacture {
     parameters {
-        - FR : 0.0 // fraction of recycled content
+        - FR : 1.0 // fraction of recycled content
         - FU : 0 // fraction of reused content
-        - FS : 0.15 // fraction of biological feedstock
+        - FS : 0.0 //0.15 // fraction of biological feedstock
     }
 
     products {
@@ -30,15 +30,19 @@ process manufacture {
 
     resources {
         - virgin_feedstock ${1- FR - FU - FS} kg
-        - biological_feedstock ${FS} kg
-        - reused_feedstock ${FU} kg
+        - ignored ${FS} kg
+        - ignored ${FU} kg
+    }
+
+    emissions {
+        - mass_transit 1 kg
     }
 }
 
 process collect {
     parameters {
         - CC : 0.0 // fraction for composting
-        - I : 1.0 // does bio material satisfy inclusion condition
+        - I : 0.0 //1.0 // does bio material satisfy inclusion condition
         - EE : 0.75 // efficiency of the energy recovery process for material satisfying inclusion condition
         - BC : 0.45 // typical carbon content of bio material
         - CE : ${I * EE * BC} // fraction for energy recovery of material satisfying the inclusion condition
@@ -47,7 +51,7 @@ process collect {
     }
 
     products {
-        - material_for_recycling ${CR + CU} kg
+        - material_for_recycling ${CR} kg
     }
 
     inputs {
@@ -56,9 +60,13 @@ process collect {
 
     emissions {
         - waste_W0 ${1 - CR - CU - CC - CE} kg
-        - material_for_composting ${CC} kg
-        - material_for_energy_recovery ${CE} kg
-        - material_for_reuse ${CU} kg
+        - ignored ${CC} kg
+        - ignored ${CE} kg
+        - ignored ${CU} kg
+    }
+
+    emissions {
+        - mass_transit 1 kg
     }
 }
 
@@ -70,14 +78,18 @@ process recycling {
         - material_for_recycling 1 kg
     }
     emissions {
-        - recycling_output ${EC} kg
+        - ignored ${EC} kg
         - waste_WC ${1 - EC} kg
+    }
+
+    emissions {
+        - mass_transit ${-0.5*(1 - EC)} kg
     }
 }
 
 process recycled_feedstock_production {
     parameters {
-        - EF : 0.75 // efficiency of the recycled content production process
+        - EF : 0.31 // efficiency of the recycled content production process
     }
 
     products {
@@ -85,11 +97,15 @@ process recycled_feedstock_production {
     }
 
     resources {
-        - recycled_feedstock_input 1 kg
+        - ignored 1 kg
     }
 
     emissions {
         - waste_WF ${1 - EF} kg
+    }
+
+    emissions {
+        - mass_transit ${0.5*(1 - EF)} kg
     }
 }
 
@@ -121,14 +137,12 @@ process wc {
 }
 
 
-
-/*
 process virgin_feedstock_lfi {
     products {
         - virgin_feedstock 1 kg
     }
     inputs {
-        - lfi_out 1 kg
+        - mass_linear 1 kg
     }
 }
 
@@ -137,7 +151,6 @@ process unrecoverable_waste_lfi {
         - unrecoverable_waste 1 kg
     }
     inputs {
-        - lfi_out 1 kg
+        - mass_linear 1 kg
     }
 }
-*/

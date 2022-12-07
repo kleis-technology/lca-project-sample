@@ -1,16 +1,15 @@
 package mci
 
-query {
-    out {
-        - mass_manufactured
+process main {
+    products {
+        - utility 1 one
     }
-    in {
-        - virgin_feedstock
-        - unrecoverable_waste
 
-        - biological_feedstock
-        - material_for_composting
-        - bio_material_for_energy_recovery
+    products {
+        - mass_used 1 kg
+    }
+    inputs {
+        - mass_manufactured 1 kg
     }
 }
 
@@ -27,16 +26,16 @@ process manufacture {
 
     inputs {
         - recycled_feedstock ${FR} kg
-        - reused_feedstock ${FU} kg
     }
 
     resources {
         - virgin_feedstock ${1- FR - FU - FS} kg
         - biological_feedstock ${FS} kg
+        - reused_feedstock ${FU} kg
     }
 }
 
-process split {
+process collect {
     parameters {
         - CC : 0.0 // fraction for composting
         - I : 1.0 // does bio material satisfy inclusion condition
@@ -48,17 +47,18 @@ process split {
     }
 
     products {
-        - material_for_recycling_or_reuse ${CR + CU} kg
+        - material_for_recycling ${CR + CU} kg
     }
 
     inputs {
-        - mass_manufactured 1 kg
+        - mass_used 1 kg
     }
 
     emissions {
         - waste_W0 ${1 - CR - CU - CC - CE} kg
         - material_for_composting ${CC} kg
-        - bio_material_for_energy_recovery ${CE} kg
+        - material_for_energy_recovery ${CE} kg
+        - material_for_reuse ${CU} kg
     }
 }
 
@@ -66,13 +66,11 @@ process recycling {
     parameters {
         - EC : 0.31 // efficiency of the recycling process
     }
-    products {
-        - input_for_recycled_feedstock_production ${EC} kg
-    }
     inputs {
-        - material_for_recycling_or_reuse 1 kg
+        - material_for_recycling 1 kg
     }
     emissions {
+        - recycling_output ${EC} kg
         - waste_WC ${1 - EC} kg
     }
 }
@@ -86,8 +84,8 @@ process recycled_feedstock_production {
         - recycled_feedstock ${EF} kg
     }
 
-    inputs {
-        - input_for_recycled_feedstock_production 1 kg
+    resources {
+        - recycled_feedstock_input 1 kg
     }
 
     emissions {
@@ -95,39 +93,51 @@ process recycled_feedstock_production {
     }
 }
 
-process reuse {
-    products {
-        - reused_feedstock 1 kg
-    }
-    inputs {
-        - material_for_recycling_or_reuse 1 kg
-    }
-}
-
 process w0 {
     products {
-        - unrecoverable_waste 1 kg
+        - waste_W0 1 kg
     }
     inputs {
-        - waste_W0 1 kg
+        - unrecoverable_waste 1 kg
     }
 }
 
 process wf {
     products {
-        - unrecoverable_waste 1 kg
+        - waste_WF 1 kg
     }
     inputs {
-        - waste_WF 0.5 kg
+        - unrecoverable_waste 0.5 kg
     }
 }
 
 process wc {
     products {
-        - unrecoverable_waste 1 kg
+        - waste_WC 1 kg
     }
-
     inputs {
-        - waste_WC 0.5 kg
+        - unrecoverable_waste 0.5 kg
     }
 }
+
+
+
+/*
+process virgin_feedstock_lfi {
+    products {
+        - virgin_feedstock 1 kg
+    }
+    inputs {
+        - lfi_out 1 kg
+    }
+}
+
+process unrecoverable_waste_lfi {
+    products {
+        - unrecoverable_waste 1 kg
+    }
+    inputs {
+        - lfi_out 1 kg
+    }
+}
+*/

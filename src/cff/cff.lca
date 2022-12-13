@@ -1,0 +1,108 @@
+package cff
+
+parameters {
+    - A : 0.5
+    - B : 0.5
+}
+
+process main {
+    products {
+        - utility 1 one
+    }
+    inputs {
+        - manufactured 1 one
+        - used 1 one
+    }
+}
+
+process manufacturing {
+    parameters {
+        - R1 : 0.2
+    }
+
+    products {
+        - manufactured 1 one
+    }
+
+    inputs {
+        - recycled_material ${R1} one
+    }
+
+    resources {
+        - Ev ${1 - R1} one
+    }
+}
+
+process recycled_content_source {
+    parameters {
+        - Qsin_Qp: 1.0
+    }
+
+    products {
+        - recycled_material 1 one
+    }
+
+    resources {
+        - Ev ${(1 - A) * Qsin_Qp} one
+        - Erecycled ${A} one
+    }
+}
+
+process usage {
+    parameters {
+        - R2 : 0.2
+        - R3 : 0.3
+    }
+
+    products {
+        - used 1 one
+    }
+
+    inputs {
+        - material_for_recycling ${R2} one
+        - material_for_incineration ${R3} one
+        - material_for_landfill ${1 - R2 - R3} one
+    }
+}
+
+process recycling {
+    parameters {
+        - Qsout_Qp : 1.0
+    }
+    products {
+        - material_for_recycling 1 one
+    }
+    emissions {
+        - ErecyclingEol ${1 - A} one
+    }
+    resources {
+        - EstarV ${(1 - A) * Qsout_Qp} one
+    }
+}
+
+process incineration {
+    parameters {
+        - LHV : 1.0
+        - Xer_heat : 1.0
+        - Xer_elec : 1.0
+    }
+    products {
+        - material_for_incineration 1 one
+    }
+    emissions {
+        - Eer ${1 -B} one
+    }
+    resources {
+        - Ese_heat ${(1 - B)*LHV*Xer_heat} one
+        - Ese_elec ${(1 - B)*LHV*Xer_elec} one
+    }
+}
+
+process landfill {
+    products {
+        - material_for_landfill 1 one
+    }
+    emissions {
+        - Ed 1 one
+    }
+}

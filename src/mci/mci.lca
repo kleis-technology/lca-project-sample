@@ -1,156 +1,185 @@
-package mci
+package mci2
+
+parameters { // parameters
+    - NUse : 10.0
+    - FU : ${1.0 - 1.0/(NUse + 1)}  // reused
+    - FR : 0.0  // recycled content
+    - FS : 0.0  // sustainable production
+    - EC : 1.0  // efficiency of upstream recycling process
+}
+
+parameters {
+    - CC : 0.0  // composting
+    - CR : 0.0  // recycling
+    - CU : ${1.0 - 1.0/(NUse + 1)}  // reuse
+    - EF : 1.0  // efficiency of downstream recycling process
+
+    - I : 0.0   // inclusion condition
+    - BC : 0.45 // carbon content
+    - EE : 1.0  // efficiency of energy recovery process
+    - CE : ${I * BC * EE} // energy recovery (fraction for)
+}
 
 process main {
     products {
-        - utility 1 one
-    }
-
-    products {
-        - mass_used 1 kg
+        - service 1 one
     }
     inputs {
-        - mass_manufactured 1 kg
+        - M_manuf 1 kg
+        - M_eol 1 kg
     }
 }
+
+/**
+MANUFACTURE
+*/
 
 process manufacture {
-    parameters {
-        - FR : 1.0 // fraction of recycled content
-        - FU : 0 // fraction of reused content
-        - FS : 0.0 //0.15 // fraction of biological feedstock
-    }
-
     products {
-        - mass_manufactured 1 kg
+        - M_manuf 1 kg
     }
 
     inputs {
-        - recycled_feedstock ${FR} kg
-    }
-
-    resources {
-        - virgin_feedstock ${1- FR - FU - FS} kg
-        - ignored ${FS} kg
-        - ignored ${FU} kg
+        - recycled ${FR} kg
+        - reused ${FU} kg
+        - sustainable ${FS} kg
+        - virgin ${1 - FR - FU - FS} kg
     }
 
     emissions {
-        - mass_transit 1 kg
+        - transit 1 kg
     }
 }
 
-process collect {
-    parameters {
-        - CC : 0.0 // fraction for composting
-        - I : 0.0 //1.0 // does bio material satisfy inclusion condition
-        - EE : 0.75 // efficiency of the energy recovery process for material satisfying inclusion condition
-        - BC : 0.45 // typical carbon content of bio material
-        - CE : ${I * EE * BC} // fraction for energy recovery of material satisfying the inclusion condition
-        - CR : 0.06 // fraction for recycling
-        - CU : 0.0 // fraction for reuse
-    }
-
+process upstream_recycling {
     products {
-        - material_for_recycling ${CR} kg
+        - recycled 1 kg
     }
 
     inputs {
-        - mass_used 1 kg
-    }
-
-    emissions {
-        - waste_W0 ${1 - CR - CU - CC - CE} kg
-        - ignored ${CC} kg
-        - ignored ${CE} kg
-        - ignored ${CU} kg
-    }
-
-    emissions {
-        - mass_transit 1 kg
-    }
-}
-
-process recycling {
-    parameters {
-        - EC : 0.31 // efficiency of the recycling process
-    }
-    inputs {
-        - material_for_recycling 1 kg
-    }
-    emissions {
+        - WC ${1 - EC} kg
         - ignored ${EC} kg
-        - waste_WC ${1 - EC} kg
-    }
-
-    emissions {
-        - mass_transit ${-0.5*(1 - EC)} kg
     }
 }
 
-process recycled_feedstock_production {
-    parameters {
-        - EF : 0.31 // efficiency of the recycled content production process
-    }
+/**
+END OF LIFE
+*/
 
+process eol {
     products {
-        - recycled_feedstock ${EF} kg
+        - M_eol 1 kg
+    }
+    inputs {
+        - composting ${CC} kg
+        - energy_recovery ${CE} kg
+        - recycling ${CR} kg
+        - reuse ${CU} kg
+        - W0 ${1 - CC - CE - CR - CU} kg
+    }
+    emissions {
+        - transit 1 kg
+    }
+}
+
+process downstream_recycling {
+    products {
+        - recycling 1 kg
     }
 
+    inputs {
+        - WF ${1 - EF} kg
+        - ignored ${EF} kg
+    }
+}
+
+/**
+MCI CHARACTERIZATION
+*/
+
+process WF {
+    products {
+        - WF 1 kg
+    }
+    emissions {
+        - linear ${0.5} kg
+        - transit ${0.5} kg
+    }
+}
+
+process WC {
+    products {
+        - WC 1 kg
+    }
+    emissions {
+        - linear ${0.5} kg
+        - transit ${-0.5} kg
+    }
+}
+
+process virgin {
+    products {
+        - virgin 1 kg
+    }
+    emissions {
+        - linear 1 kg
+    }
+}
+
+process W0 {
+    products {
+        - W0 1 kg
+    }
+    emissions {
+        - linear 1 kg
+    }
+}
+
+/*
+IGNORED
+*/
+
+process "reused" {
+    products {
+        - "reused" 1 kg
+    }
     resources {
         - ignored 1 kg
     }
+}
 
-    emissions {
-        - waste_WF ${1 - EF} kg
+process "sustainable" {
+    products {
+        - "sustainable" 1 kg
     }
-
-    emissions {
-        - mass_transit ${0.5*(1 - EF)} kg
+    resources {
+        - ignored 1 kg
     }
 }
 
-process w0 {
+process "composting" {
     products {
-        - waste_W0 1 kg
+        - "composting" 1 kg
     }
-    inputs {
-        - unrecoverable_waste 1 kg
+    resources {
+        - ignored 1 kg
     }
 }
 
-process wf {
+process "energy_recovery" {
     products {
-        - waste_WF 1 kg
+        - "energy_recovery" 1 kg
     }
-    inputs {
-        - unrecoverable_waste 0.5 kg
+    resources {
+        - ignored 1 kg
     }
 }
 
-process wc {
+process "reuse" {
     products {
-        - waste_WC 1 kg
+        - "reuse" 1 kg
     }
-    inputs {
-        - unrecoverable_waste 0.5 kg
-    }
-}
-
-
-process virgin_feedstock_lfi {
-    products {
-        - virgin_feedstock 1 kg
-    }
-    inputs {
-        - mass_linear 1 kg
-    }
-}
-
-process unrecoverable_waste_lfi {
-    products {
-        - unrecoverable_waste 1 kg
-    }
-    inputs {
-        - mass_linear 1 kg
+    resources {
+        - ignored 1 kg
     }
 }

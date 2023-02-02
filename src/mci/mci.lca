@@ -1,7 +1,8 @@
 package mci2
 
-parameters {
-    - FU : ${1.0 - 1.0/NUse}  // reused
+parameters { // parameters
+    - NUse : 10.0
+    - FU : ${1.0 - 1.0/(NUse + 1)}  // reused
     - FR : 0.0  // recycled content
     - FS : 0.0  // sustainable production
     - EC : 1.0  // efficiency of upstream recycling process
@@ -10,15 +11,13 @@ parameters {
 parameters {
     - CC : 0.0  // composting
     - CR : 0.0  // recycling
-    - CU : ${1 - 1.0/NUse}  // reuse
+    - CU : ${1.0 - 1.0/(NUse + 1)}  // reuse
     - EF : 1.0  // efficiency of downstream recycling process
 
     - I : 0.0   // inclusion condition
     - BC : 0.45 // carbon content
     - EE : 1.0  // efficiency of energy recovery process
     - CE : ${I * BC * EE} // energy recovery (fraction for)
-
-    - NUse : 2.0
 }
 
 process main {

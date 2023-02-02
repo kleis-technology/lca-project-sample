@@ -21,6 +21,10 @@ process carrot_production {
         - "HFC-32, air, lower stratosphere and upper troposphere" ${2 * sin(R1)^2 + qElec^2} kg
         -  "warfarin, air, non-urban high stack" 3 kg
     }
+
+    resources {
+        -  "warfarin, air, non-urban high stack" 3 kg
+    }
 }
 
 process electricity_production {

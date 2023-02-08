@@ -2,6 +2,8 @@ package ssii
 
 import ef31.*
 import ecoinvent.*
+import scope1.*
+import scope2.*
 
     parameters {
         - n_employees : 7
@@ -18,7 +20,6 @@ process kleis {
         - cafe ${n_employees * 3 * 200} one // cafe
     }
     inputs {
-
         - bureau ${n_employees} one  // one.year ?
         - chaise ${n_employees} one  // one.year ?
         - ecran ${n_employees * 8 * 200} h // usage de l'ecran
@@ -31,11 +32,11 @@ process kleis {
     }
 
     inputs {
-        - chauffage 42 MJ // person.km
+        - chauffage 10000 MJ 
     }
 
     inputs {
-        - gmail ${n_employees * 50 * 200} one // mail
+        - internet ${24 * 200} h // mail
     }
 }
 
@@ -51,45 +52,3 @@ process kleis_transport_mix {
 
 }
 
-process transport_mix {
-    parameters {
-        - F_train: 0.8
-    }
-    products {
-        - transport_mix 1 one // person.km
-    }
-    inputs {
-        - "Transport, passenger train {CH}| regional | Cut-off, U" ${F_train} one
-        - "Transport, regular bus {CH}| processing | Cut-off, U" ${1 - F_train} one
-    }
-}
-
-
-process laptop {
-
-    products {
-        - laptop 1 h
-    }
-    inputs {
-        - "Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U" 1 h
-    }
-}
-
-
-process natel {
-    products {
-        - natel 1 h
-    }
-    inputs {
-        - "Consumer electronics, mobile device, smartphone {GLO}| market for consumer electronics, mobile device, smartphone | Cut-off, U" 1 h
-    }
-}
-
-process ecran {
-    products {
-        - ecran 1 h
-    }
-    inputs {
-        - "Display, liquid crystal, 17 inches {GLO}| market for | Cut-off, U" 1 h
-    }
-}

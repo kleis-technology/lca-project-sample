@@ -1,0 +1,63 @@
+package scope1
+
+import ef31.*
+import ecoinvent.*
+
+process bureau {
+
+    products {
+        - bureau 1 one
+    }
+
+    parameters {
+        - lifespan: 15 // year
+        - weight: 30 // kg
+    }
+
+    inputs {
+        - "Furniture, wooden {GLO}| market for furniture, wooden | Cut-off, U" ${weight/lifespan} kg
+    }
+}
+
+process chaise {
+    products {
+        - chaise 1 one
+    }
+
+    parameters {
+        - lifespan: 15 // year
+        - weight: 3 // kg
+    }
+
+    inputs {
+        - "Furniture, wooden {GLO}| market for furniture, wooden | Cut-off, U" ${weight/lifespan} kg
+    }
+}
+
+process laptop {
+
+    products {
+        - laptop 1 h
+    }
+    inputs {
+        - "Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U" 1 h
+    }
+}
+
+process natel {
+    products {
+        - natel 1 h
+    }
+    inputs {
+        - "Consumer electronics, mobile device, smartphone {GLO}| market for consumer electronics, mobile device, smartphone | Cut-off, U" 1 h
+    }
+}
+
+process ecran {
+    products {
+        - ecran 1 h
+    }
+    inputs {
+        - "Display, liquid crystal, 17 inches {GLO}| market for | Cut-off, U" 1 h
+    }
+}

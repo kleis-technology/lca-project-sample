@@ -33,7 +33,6 @@ process "Consumer electronics, mobile device, smartphone {GLO}| market for consu
     }
 }
 
-
 process "Transport, passenger train {CH}| regional | Cut-off, U" {
     products {
         - "Transport, passenger train {CH}| regional | Cut-off, U" 1 one // person.km
@@ -54,5 +53,35 @@ process "Transport, regular bus {CH}| processing | Cut-off, U" {
     }
 }
 
+process "Furniture, wooden {GLO}| market for furniture, wooden | Cut-off, U" {
+    products {
+        - "Furniture, wooden {GLO}| market for furniture, wooden | Cut-off, U" 1 kg
+    }
 
+    emissions {
+        - "carbon dioxide (fossil), air" 2.184 kg
+        - "Water to turbine, water, renewable" 0.000155 m3
+    }
+}
 
+process "Internet access, work, 0.2 Mbit/s {CH}| internet access, work, 0.2 Mbit/s | Cut-off, U" {
+    products {
+        -"Internet access, work, 0.2 Mbit/s {CH}| internet access, work, 0.2 Mbit/s | Cut-off, U" 1 h
+    }
+
+    emissions {
+        - "carbon dioxide (fossil), air" 878.9e-6 kg
+        - "Water to turbine, water, renewable"    950e-10 m3
+    }
+}
+
+process "Heat, district or industrial, other than natural gas {RoW}| market for | Cut-off, U" {
+    products {
+        - "Heat, district or industrial, other than natural gas {RoW}| market for | Cut-off, U" 1 MJ
+    }
+
+    emissions {
+        - "carbon dioxide (fossil), air" 0.1149 kg
+        - "Water to turbine, water, renewable" 1.1812e-6 m3
+    }
+}

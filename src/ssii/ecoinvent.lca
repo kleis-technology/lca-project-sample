@@ -1,0 +1,58 @@
+package ecoinvent
+
+import ef31.*
+
+process "Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U" {
+    products {
+        - "Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U"  1 h
+    }
+
+    emissions {
+        - "Water to turbine, water, renewable" 0.060427 m3
+        - "Water, water" 0.060426 m3
+        - "carbon dioxide (fossil), air" 5.843e-3 kg
+        - "methane (fossil), air, non-urban high stack" 1.4e-5 kg
+    }
+}
+
+process "Display, liquid crystal, 17 inches {GLO}| market for | Cut-off, U" {
+    products  {
+        -  "Display, liquid crystal, 17 inches {GLO}| market for | Cut-off, U" 1 h
+    }
+    inputs {
+        - "Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U" 0.5 h
+    }
+}
+
+process "Consumer electronics, mobile device, smartphone {GLO}| market for consumer electronics, mobile device, smartphone | Cut-off, U" {
+    products {
+        - "Consumer electronics, mobile device, smartphone {GLO}| market for consumer electronics, mobile device, smartphone | Cut-off, U" 1 h
+    }
+    inputs {
+        - "Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U" 0.25 h
+    }
+}
+
+
+process "Transport, passenger train {CH}| regional | Cut-off, U" {
+    products {
+        - "Transport, passenger train {CH}| regional | Cut-off, U" 1 one // person.km
+    }
+
+    emissions {
+        - "carbon dioxide (fossil), air" 9.921e-3 kg
+    }
+}
+
+process "Transport, regular bus {CH}| processing | Cut-off, U" {
+    products {
+        - "Transport, regular bus {CH}| processing | Cut-off, U" 1 one // person.km
+    }
+
+    emissions {
+        - "carbon dioxide (fossil), air" 0.07889 kg
+    }
+}
+
+
+

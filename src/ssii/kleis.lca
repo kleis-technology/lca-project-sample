@@ -1,6 +1,7 @@
 package ssii
 
 import ef31.*
+import ecoinvent.*
 
     parameters {
         - n_employees : 7
@@ -15,7 +16,6 @@ process kleis {
     inputs {
         - batiment ${surface_m2} one // m2.year
         - cafe ${n_employees * 3 * 200} one // cafe
-        - beamer_usage 200 h
     }
     inputs {
 
@@ -27,7 +27,7 @@ process kleis {
     }
 
     inputs {
-        - transport_mix ${n_employees * 30 * 200} one // person.km
+        - kleis_transport_mix 1 one // person.km
     }
 
     inputs {
@@ -39,6 +39,18 @@ process kleis {
     }
 }
 
+process kleis_transport_mix {
+
+    products {
+        - kleis_transport_mix 1 one
+    }
+
+    inputs {
+        - transport_mix ${n_employees * 30 * 200} one
+    }
+
+}
+
 process transport_mix {
     parameters {
         - F_train: 0.8
@@ -47,28 +59,19 @@ process transport_mix {
         - transport_mix 1 one // person.km
     }
     inputs {
-        - train ${F_train} one
-        - bus ${1 - F_train} one
+        - "Transport, passenger train {CH}| regional | Cut-off, U" ${F_train} one
+        - "Transport, regular bus {CH}| processing | Cut-off, U" ${1 - F_train} one
     }
 }
 
-process train {
-    products {
-        - train 1 one
-    }
-    emissions {
-        - "carbon dioxide (fossil), air" 9.921e-3 kg
-        - "water, water, renewable" 5.891e-3 m3
-    }
-}
 
-process bus {
+process laptop {
+
     products {
-        - bus 1 one
+        - laptop 1 h
     }
-    emissions {
-        - "carbon dioxide (fossil), air" 0.1 kg
-        - "water, water, renewable" 1.7e-3 m3
+    inputs {
+        - "Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U" 1 h
     }
 }
 
@@ -78,7 +81,7 @@ process natel {
         - natel 1 h
     }
     inputs {
-        - laptop 0.25 h
+        - "Consumer electronics, mobile device, smartphone {GLO}| market for consumer electronics, mobile device, smartphone | Cut-off, U" 1 h
     }
 }
 
@@ -87,22 +90,6 @@ process ecran {
         - ecran 1 h
     }
     inputs {
-        - laptop 0.5 h
+        - "Display, liquid crystal, 17 inches {GLO}| market for | Cut-off, U" 1 h
     }
 }
-
-process laptop { //  Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U
-    products {
-        - laptop 1 h
-    }
-
-    emissions {
-        - "carbon dioxide (fossil), air" 5.843e-3 kg
-        - "water, water, renewable" 4.789e-3 m3
-    }
-
-land_use {
-    - "urban, land occupation" 7 one
-}
-}
-

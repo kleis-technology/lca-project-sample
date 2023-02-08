@@ -1,0 +1,58 @@
+package ssii
+
+import ef31.*
+
+    parameters {
+        - n_employees : 7
+        - surface_m2 : 150
+    }
+
+process kleis {
+    products {
+        - kleis 1 one // implicitly over 1 year
+    }
+
+    inputs {
+        - batiment ${surface_m2} one // m2.year
+        - cafe ${n_employees * 3 * 200} one // cafe
+        - beamer_usage 200 h
+    }
+    inputs {
+
+        - bureau ${n_employees} one  // one.year ?
+        - chaise ${n_employees} one  // one.year ?
+        - ecran ${n_employees * 8 * 200} h // usage de l'ecran
+        - laptop ${n_employees * 8 * 200} h // usage de l'ecran
+        - natel ${n_employees * 3 * 365} h // usage de l'ecran
+    }
+
+    inputs {
+        - transport_mix ${n_employees * 30 * 200} km // person.km
+    }
+
+
+    inputs {
+        - chauffage 42 MJ // person.km
+    }
+
+    inputs {
+        - gmail ${n_employees * 50 * 200} one // mail
+    }
+}
+
+process laptop { //  Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U
+
+    products {
+        - laptop 1 h
+    }
+
+    emissions {
+        - "carbon dioxide (fossil), air" 5.843e-3 kg
+        - "water, water, renewable" 4.789e-3 m3
+    }
+
+    land_use {
+        - "urban, land occupation" 7 one
+    }
+}
+

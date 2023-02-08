@@ -1,9 +1,9 @@
-package mci2
+package mci
 
 parameters { // parameters
-    - NUse : 10.0
+    - NUse : 4.0
     - FU : ${1.0 - 1.0/(NUse + 1)}  // reused
-    - FR : 0.0  // recycled content
+    - FR : 0.1  // recycled content
     - FS : 0.0  // sustainable production
     - EC : 1.0  // efficiency of upstream recycling process
 }

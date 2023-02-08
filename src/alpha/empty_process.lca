@@ -1,0 +1,14 @@
+package ssii
+
+parameters {
+
+}
+process kleis {
+    products {
+        - kleis 1 one // kleis running over 1 year
+    }
+    inputs {
+        -
+
+    }
+}

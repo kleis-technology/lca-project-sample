@@ -1,0 +1,27 @@
+package loop
+
+process a {
+    products {
+        - a 1 kg
+    }
+
+    inputs {
+        - b 1000 g
+    }
+    emissions {
+        - co2 100 g
+    }
+}
+
+process b {
+     products {
+         - b 1 kg
+     }
+
+    inputs {
+        - a 1000 g
+    }
+    emissions {
+        - co2 100 g
+    }
+ }

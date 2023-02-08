@@ -1,0 +1,26 @@
+package reference_amount_is_zero
+
+import ef31.*
+
+process "co2_soc_change" {
+
+    products {
+        - "co2_soc_change" 1 m
+    }
+
+    emissions {
+        - "carbon dioxide (fossil), air" 2 kg
+    }
+}
+
+
+process "flu_factor" {
+
+    parameters {
+        - flu: 0
+    }
+
+    products {
+        - "factor" ${flu} one
+    }
+}

@@ -19,7 +19,8 @@ process carrot_production {
 
     emissions {
         - "HFC-32, air, lower stratosphere and upper troposphere" ${2 * sin(R1)^2 + qElec^2} kg
-        -  "warfarin, air, non-urban high stack" 3 kg
+        - "warfarin, air, non-urban high stack" 3 kg
+        - "adipic acid, compound with hexane-1,6-diamine (1:1), air" 1 kg
     }
 
     resources {
@@ -29,7 +30,7 @@ process carrot_production {
 
 process electricity_production {
     products {
-        - electricity 1 kJ
+        - electricity 1 J
     }
 
     emissions {
@@ -47,3 +48,4 @@ process water_production {
         - "HFC-32, air, lower stratosphere and upper troposphere" 1 kg
     }
 }
+

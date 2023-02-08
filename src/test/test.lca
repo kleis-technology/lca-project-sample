@@ -1,0 +1,57 @@
+package test
+
+process p {
+    products {
+        - a 1 kg
+    }
+    inputs {
+        - b 1 kg
+    }
+    inputs {
+        - co2 1 kg
+    }
+}
+
+process "b" {
+    products {
+        - "b" 1 kg
+    }
+    inputs {
+        - co2 1 kg
+    }
+}
+
+
+//
+//substance co2 {
+//    name: "co2"
+//    compartment: "air"
+//    sub_compartment: "lower stratosphere and upper troposphere"
+//    type: emissions
+//    unit: kg
+//
+//    factors : ef31 {
+//        - "Climate change (kgCO2)"  1
+//        - "Climate change-Fossil (kgCO2)"  1
+//        - "Human toxicity, non-cancer"  8
+//        - "Human toxicity, non-cancer_organics"  7
+//    }
+//
+//    meta {
+//        - dimension: "Mass"
+//        - generator: "kleis-lca-generator"
+//        - casNumber: "75-10-5"
+//        - ecNumber: "200-839-4"
+//    }
+//
+//}
+
+process "co2" {
+    products {
+        - "co2" 1 kg
+    }
+    emissions {
+        - climate_change 1 one
+        - toxicity 8 one
+    }
+}

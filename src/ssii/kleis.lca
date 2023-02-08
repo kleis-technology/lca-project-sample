@@ -27,9 +27,8 @@ process kleis {
     }
 
     inputs {
-        - transport_mix ${n_employees * 30 * 200} km // person.km
+        - transport_mix ${n_employees * 30 * 200} one // person.km
     }
-
 
     inputs {
         - chauffage 42 MJ // person.km
@@ -40,8 +39,59 @@ process kleis {
     }
 }
 
-process laptop { //  Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U
+process transport_mix {
+    parameters {
+        - F_train: 0.8
+    }
+    products {
+        - transport_mix 1 one // person.km
+    }
+    inputs {
+        - train ${F_train} one
+        - bus ${1 - F_train} one
+    }
+}
 
+process train {
+    products {
+        - train 1 one
+    }
+    emissions {
+        - "carbon dioxide (fossil), air" 9.921e-3 kg
+        - "water, water, renewable" 5.891e-3 m3
+    }
+}
+
+process bus {
+    products {
+        - bus 1 one
+    }
+    emissions {
+        - "carbon dioxide (fossil), air" 0.1 kg
+        - "water, water, renewable" 1.7e-3 m3
+    }
+}
+
+
+process natel {
+    products {
+        - natel 1 h
+    }
+    inputs {
+        - laptop 0.25 h
+    }
+}
+
+process ecran {
+    products {
+        - ecran 1 h
+    }
+    inputs {
+        - laptop 0.5 h
+    }
+}
+
+process laptop { //  Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U
     products {
         - laptop 1 h
     }
@@ -51,8 +101,8 @@ process laptop { //  Operation, computer, desktop, office use {CH}| operation, c
         - "water, water, renewable" 4.789e-3 m3
     }
 
-    land_use {
-        - "urban, land occupation" 7 one
-    }
+land_use {
+    - "urban, land occupation" 7 one
+}
 }
 

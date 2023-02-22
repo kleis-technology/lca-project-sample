@@ -1,0 +1,174 @@
+package ssii
+
+import prelude.units.*
+
+/*
+    Process definitions
+*/
+
+process p_kleis {
+    params {
+        n_employees = 7 one
+        surface = 150 m2
+    }
+    1 one kleis
+
+    inputs {
+        surface batiment
+        n_employees * (200 day) * (3 one/day) cafe
+    }
+
+    inputs {
+        n_employees bureau
+        n_employees chaise
+        n_employees * (200 day) * (8 hour/day) ecran
+        n_employees * (200 day) * (8 hour/day) laptop
+        n_employees * (365 day) * (3 hour/day) natel
+    }
+
+    inputs {
+        n_employees * (200 day) * (30 km/day) transport_mix
+    }
+
+    inputs {
+        10 kWh chauffage
+    }
+
+    inputs {
+        (200 day) * (24 hour/day) internet
+    }
+}
+
+
+process p_bureau {
+    params {
+        lifespan = 15 one
+        weight = 30 kg
+    }
+
+    1 one bureau
+    inputs {
+        weight/lifespan furniture
+    }
+}
+
+process p_chaise {
+    params {
+        lifespan = 15 one
+        weight = 30 kg
+    }
+
+    1 one chaise
+    inputs {
+        weight/lifespan furniture
+    }
+}
+
+process p_laptop {
+    1 hour laptop
+    inputs {
+        1 hour operation_computer
+    }
+}
+
+process p_natel {
+    1 hour natel
+    inputs {
+        1 hour consumer_electronics_smartphone
+    }
+}
+
+process p_ecran {
+    1 hour ecran
+    inputs {
+        1 hour display_liquid_crystal
+    }
+}
+
+
+process p_transport_mix {
+    params {
+        F_train = 80 percent
+    }
+    1 person*km transport_mix
+    inputs {
+        F_train * (1 person*km) transport_passenger_train
+        (100 percent - F_train) * (1 person*km) transport_regular_bus
+    }
+}
+
+
+process p_internet {
+    1 hour internet
+
+    inputs {
+        1 hour internet_access
+    }
+}
+
+process p_chauffage {
+    1 kWh chauffage
+
+    inputs {
+        1 kWh heat_district_industrial
+    }
+}
+
+/*
+    Product definitions
+*/
+
+product kleis {
+    name = "kleis"
+    reference_unit = one
+}
+
+product batiment {
+    name = "batiment"
+    reference_unit = m2
+}
+
+product cafe {
+    name = "cafe"
+    reference_unit = one
+}
+
+product bureau {
+    name = "bureau"
+    reference_unit = one
+}
+
+product chaise {
+    name = "chaise"
+    reference_unit = one
+}
+
+product ecran {
+    name = "usage écran"
+    reference_unit = hour
+}
+
+product laptop {
+    name = "usage laptop"
+    reference_unit = hour
+}
+
+product natel {
+    name = "usage laptop"
+    reference_unit = hour
+}
+
+product transport_mix {
+    name = "transport mix"
+    reference_unit = person * km
+}
+
+product chauffage {
+    name = "chauffage"
+    reference_unit = kWh
+}
+
+product internet {
+    name = "internet usage"
+    reference_unit = hour
+}

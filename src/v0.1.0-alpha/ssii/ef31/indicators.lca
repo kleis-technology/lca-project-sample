@@ -1,0 +1,23 @@
+package ef31
+
+import prelude.units.*
+
+product water_to_turbine {
+    name = "Water to turbine, water, renewable"
+    reference_unit = m3
+}
+
+product water {
+    name = "Water, water"
+    reference_unit = m3
+}
+
+product carbon_dioxide_fossil {
+    name = "carbon dioxide (fossil), air"
+    reference_unit = kg
+}
+
+product methane_fossil {
+    name = "methane (fossil), air, non-urban high stack"
+    reference_unit = kg
+}

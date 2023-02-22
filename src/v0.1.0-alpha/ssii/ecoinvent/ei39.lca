@@ -1,0 +1,123 @@
+package ecoinvent
+
+import ef31.*
+import prelude.units.*
+
+/*
+    Product definitions
+*/
+
+product furniture {
+    name = "Furniture, wooden {GLO}| market for furniture, wooden | Cut-off, U"
+    reference_unit = kg
+}
+
+product operation_computer {
+    name = "Operation, computer, desktop, office use {CH}| operation, computer, desktop, with liquid crystal display, office use | Cut-off, U"
+    reference_unit = hour
+}
+
+product consumer_electronics_smartphone {
+    name = "Consumer electronics, mobile device, smartphone {GLO}| market for consumer electronics, mobile device, smartphone | Cut-off, U"
+    reference_unit = hour
+}
+
+product display_liquid_crystal {
+    name = "Display, liquid crystal, 17 inches {GLO}| market for | Cut-off, U"
+    reference_unit = hour
+}
+
+product transport_passenger_train {
+    name = "Transport, passenger train {CH}| regional | Cut-off, U"
+    reference_unit = person * km
+}
+
+product transport_regular_bus {
+    name = "Transport, regular bus {CH}| processing | Cut-off, U"
+    reference_unit = person * km
+}
+
+product internet_access {
+    name = "Internet access, work, 0.2 Mbit/s {CH}| internet access, work, 0.2 Mbit/s | Cut-off, U"
+    reference_unit = hour
+}
+
+product heat_district_industrial {
+    name = "Heat, district or industrial, other than natural gas {RoW}| market for | Cut-off, U"
+    reference_unit = kWh
+}
+
+/*
+    System definitions
+*/
+
+system ei39 {
+    process p_operation_computer {
+        1 hour operation_computer
+
+        emissions {
+            0.060427 m3 water_to_turbine
+            0.060426 m3 water
+            5.843e-3 kg carbon_dioxide_fossil
+            1.4e-5 kg methane_fossil
+        }
+    }
+
+    process p_display_liquid_crystal {
+        1 hour display_liquid_crystal
+        inputs {
+            0.5 hour operation_computer
+        }
+    }
+
+    process p_consumer_electronics_smartphone {
+        1 hour consumer_electronics_smartphone
+        inputs {
+            0.25 hour operation_computer
+        }
+    }
+
+    process p_transport_passenger_train {
+        1 person*km transport_passenger_train
+
+        emissions {
+            9.921e-3 kg carbon_dioxide_fossil
+        }
+    }
+
+    process p_transport_regular_bus {
+        1 person*km transport_regular_bus
+
+        emissions {
+            0.07889 kg carbon_dioxide_fossil
+        }
+    }
+
+    process p_furniture {
+        1 kg furniture
+
+        emissions {
+            2.184 kg carbon_dioxide_fossil
+            0.000155 m3 water_to_turbine
+        }
+    }
+
+    process p_internet_access {
+        1 hour internet_access
+
+        emissions {
+            878.9e-6 kg carbon_dioxide_fossil
+            950e-10 m3 water_to_turbine
+        }
+    }
+
+    process p_heat_district_industrial {
+        1 kWh heat_district_industrial
+
+        emissions {
+            0.1149 kg carbon_dioxide_fossil
+            1.1812e-6 m3 water_to_turbine
+        }
+    }
+}
+

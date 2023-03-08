@@ -2,33 +2,32 @@ package autodef
 
 import prelude.units.*
 
-process a_proc {
-    products {
-        1 kg a
-    }
-    inputs {
-        1 kg b from b_proc(q = 1 kg)
-    }
-}
-
-process b_proc {
+process farm_carrot {
     params {
-        q = 1 kg
+        qty_gly = 30 kg
     }
     products {
-        1 kg b
+        3000 kg carrot
+    }
+    resources {
+        1 ha land_use
     }
     inputs {
-        q c from c_proc
-        0.5 kg a from a_proc
+        qty_gly glyphosate
     }
 }
 
-process c_proc {
+process carrot_soup {
     products {
-        1 kg c
+        1 l soup
     }
     inputs {
-        1 l water
+        3 kg carrot from farm_carrot(qty_gly = 0 kg) // OK
+        3 kg water from farm_carrot(qty_gly = 0 kg) // NOK
+        3 kg carrot // OK (refers to farm_carrot)
+        2 kg c from p_c // NOK
+        2 kg c from p_c() // OK
+        2 kg d // OK (terminal, no process)
+        //2 kg d(a = 3 l) // NOK
     }
 }

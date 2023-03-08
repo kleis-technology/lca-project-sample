@@ -1,0 +1,34 @@
+package autodef
+
+import prelude.units.*
+
+process a_proc {
+    products {
+        1 kg a
+    }
+    inputs {
+        1 kg b from b_proc(q = 1 kg)
+    }
+}
+
+process b_proc {
+    params {
+        q = 1 kg
+    }
+    products {
+        1 kg b
+    }
+    inputs {
+        q c from c_proc
+        0.5 kg a from a_proc
+    }
+}
+
+process c_proc {
+    products {
+        1 kg c
+    }
+    inputs {
+        1 l water
+    }
+}

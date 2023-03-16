@@ -1,33 +1,25 @@
 package autodef
 
-import prelude.units.*
-
 process farm_carrot {
-    params {
-        qty_gly = 30 kg
-    }
     products {
-        3000 kg carrot
+        1 kg carrot
     }
-    resources {
-        1 ha land_use
-    }
+
     inputs {
-        qty_gly glyphosate
+        1 kg glyphosate from gly_proc(yield = 100 kg)
     }
 }
 
-process carrot_soup {
-    products {
-        1 l soup
+process gly_proc {
+    params {
+        yield = 300 kg
     }
-    inputs {
-        3 kg carrot from farm_carrot(qty_gly = 0 kg) // OK
-        3 kg water from farm_carrot(qty_gly = 0 kg) // NOK
-        3 kg carrot // OK (refers to farm_carrot)
-        2 kg c from p_c // NOK
-        2 kg c from p_c() // OK
-        2 kg d // OK (terminal, no process)
-        //2 kg d(a = 3 l) // NOK
+
+    products {
+        yield glyphosate
+    }
+
+    emissions {
+        1 ha lu
     }
 }

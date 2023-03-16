@@ -29,47 +29,32 @@ Adds support for a new domain-specific language targeting <i>Life Cycle Analysis
 ```lca
 package carrot
 
-import ef31.*
-
 process carrot_production {
-    parameters {
-        - R1: 2.0
-        - qElec : 3.0
+    params {
+        qElec = 3.0 kJ
     }
 
     products {
-        - carrot 1 kg
+        1 kg carrot
     }
 
     inputs {
-        - electricity ${qElec} kJ
-        - water ${3.0} l
+        qElec electricity
+        3 l water
     }
 
     emissions {
-        - "HFC-32, air, lower stratosphere and upper troposphere" ${2 * sin(R1)^2 + qElec^2} kg
-        -  "warfarin, air, non-urban high stack" 3 kg
+        (57 percent*kg/kJ) * Qelec co2
     }
 }
 
 process electricity_production {
     products {
-        - electricity 1 kJ
+        1 kJ electricity
     }
 
     emissions {
-        - "(+)-bornan-2-one, air, urban air close to ground" 1.0 kg
-    }
-}
-
-process water_production {
-    products {
-        - water 1 l
-    }
-
-    emissions {
-        - "HFC-23, soil, agricultural" 1 kg
-        - "HFC-32, air, lower stratosphere and upper troposphere" 1 kg
+        1.0 kg co2
     }
 }
 ```

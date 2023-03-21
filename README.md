@@ -3,7 +3,8 @@
 This is a sample project to show case the LCA DSL and the associated [IntelliJ plugin](https://plugins.jetbrains.com/plugin/20543-life-cycle-analysis-as-code).
 
 <!-- Plugin description -->
-Adds support for a new domain-specific language targeting <i>Life Cycle Analysis</i> experts. The following features are available for free.
+Adds support for a new domain-specific language targeting <i>Life Cycle Analysis</i> experts.
+The following features are available :
 <ul>
     <li>EF 3.1 flows and characterization factors from the <a href="https://eplca.jrc.ec.europa.eu/LCDN/developerEF.xhtml">European Platform on Life Cycle Assessment</a></li>
     <li>Description of processes, intermediary and elementary flows, with parameters.</li>

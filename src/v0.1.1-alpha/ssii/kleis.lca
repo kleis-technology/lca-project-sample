@@ -51,13 +51,13 @@ process ss2i {
 
     // Transport
     inputs {
-        n_employees * ( 200 day ) * ( 30 km / day ) transport_mix
+        n_employees * ( 250 day ) * ( 30 km / day ) transport_mix
     }
 
     // Consommables
     inputs {
-        n_employees * ( 200 day ) * ( 3 piece / day ) cafe
-        ( 200 day ) * ( 24 hour / day ) internet
+        n_employees * ( 250 day ) * ( 3 piece / day ) cafe
+        ( 250 day ) * ( 24 hour / day ) internet
     }
 }
 

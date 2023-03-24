@@ -1,10 +1,8 @@
 package v0_1_1.ssii
 
-
 /*
-    Process definitions
+Process definitions
 */
-
 process kleis {
     params {
         n_employees = 7 person
@@ -17,19 +15,19 @@ process kleis {
 
     inputs {
         surface batiment
-        n_employees * (200 day) * (3 piece/day) cafe
+        n_employees * ( 200 day ) * ( 3 piece / day ) cafe
     }
 
     inputs {
-        n_employees bureau from bureau(lifespan = 30 piece)
+        n_employees bureau from bureau( lifespan = 30 piece )
         n_employees chaise
-        n_employees * (200 day) * (8 hour/day) ecran
-        n_employees * (200 day) * (8 hour/day) laptop
-        n_employees * (365 day) * (3 hour/day) natel
+        n_employees * ( 200 day ) * ( 8 hour / day ) ecran
+        n_employees * ( 200 day ) * ( 8 hour / day ) laptop
+        n_employees * ( 365 day ) * ( 3 hour / day ) natel
     }
 
     inputs {
-        n_employees * (200 day) * (30 km/day) transport_mix
+        n_employees * ( 200 day ) * ( 30 km / day ) transport_mix
     }
 
     inputs {
@@ -37,10 +35,9 @@ process kleis {
     }
 
     inputs {
-        (200 day) * (24 hour/day) internet
+        ( 200 day ) * ( 24 hour / day ) internet
     }
 }
-
 
 process bureau {
     params {
@@ -51,7 +48,7 @@ process bureau {
         1 piece bureau
     }
     inputs {
-        weight/lifespan furniture
+        weight / lifespan furniture
     }
 }
 
@@ -64,7 +61,7 @@ process chaise {
         1 piece chaise
     }
     inputs {
-        weight/lifespan furniture
+        weight / lifespan furniture
     }
 }
 
@@ -100,15 +97,14 @@ process transport_mix {
         F_train = 80 percent
     }
     products {
-        1 person*km transport_mix
+        1 person * km transport_mix
     }
 
     inputs {
-        F_train * (1 person*km) transport_passenger_train
-        (100 percent - F_train) * (1 person*km) transport_regular_bus
+        F_train * ( 1 person * km ) transport_passenger_train
+        ( 100 percent - F_train ) * ( 1 person * km ) transport_regular_bus
     }
 }
-
 
 process internet {
     products {
@@ -131,7 +127,7 @@ process chauffage {
 }
 
 /*
-    EI 39
+EI 39
 */
 
 // PROXIES
@@ -169,11 +165,9 @@ process operation_computer {
     }
 }
 
-
-
 process transport_passenger_train {
     products {
-        1 person*km transport_passenger_train
+        1 person * km transport_passenger_train
     }
     emissions {
         9.921e-3 kg carbon_dioxide_fossil
@@ -182,7 +176,7 @@ process transport_passenger_train {
 
 process transport_regular_bus {
     products {
-        1 person*km transport_regular_bus
+        1 person * km transport_regular_bus
     }
 
     emissions {

@@ -1,0 +1,69 @@
+//package v0_1_1.ssii
+//
+//import ef31
+//
+//// Emission factors
+//process operation_computer {
+//    products {
+//        1 hour operation_computer
+//    }
+//
+//    emissions {
+//        0.060427 m3 water_to_turbine_water_renewable
+//        0.060426 m3 water_water
+//        5.843e-3 kg carbon_dioxide_fossil_soil
+//        1.4e-5 kg methane_fossil_air
+//    }
+//}
+//
+//process transport_passenger_train {
+//    products {
+//        1 person * km transport_passenger_train
+//    }
+//    emissions {
+//        9.921e-3 kg carbon_dioxide_fossil_soil
+//    }
+//}
+//
+//process transport_regular_bus {
+//    products {
+//        1 person * km transport_regular_bus
+//    }
+//
+//    emissions {
+//        0.07889 kg carbon_dioxide_fossil_soil
+//    }
+//}
+//
+//process furniture {
+//    products {
+//        1 kg furniture
+//    }
+//
+//    emissions {
+//        2.184 kg carbon_dioxide_fossil_soil
+//        0.000155 m3 water_to_turbine_water_renewable
+//    }
+//}
+//
+//process internet_access {
+//    products {
+//        1 hour internet_access
+//    }
+//
+//    emissions {
+//        878.9e-6 kg carbon_dioxide_fossil_soil
+//        950e-10 m3 water_to_turbine_water_renewable
+//    }
+//}
+//
+//process heat_district_industrial {
+//    products {
+//        1 kWh heat_district_industrial
+//    }
+//
+//    emissions {
+//        0.1149 kg carbon_dioxide_fossil_soil
+//        1.1812e-6 m3 water_to_turbine_water_renewable
+//    }
+//}

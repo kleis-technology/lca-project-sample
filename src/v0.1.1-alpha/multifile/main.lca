@@ -1,0 +1,22 @@
+package multifile
+
+import multifile.substances
+
+process carrot {
+    params {
+        x = 100 ml
+    }
+    variables {
+        y = 1 ml
+    }
+    products {
+        1 kg carrot
+    }
+    inputs {
+        q_water + x + y water
+    }
+    emissions {
+        1 l water_from_river
+    }
+}
+

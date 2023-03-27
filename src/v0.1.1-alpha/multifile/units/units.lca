@@ -1,0 +1,11 @@
+package multifile.units
+
+unit foo {
+    symbol = "foo"
+    dimension = "foo"
+}
+
+unit foo3 {
+    symbol = "foo3"
+    alias_for = 10 foo
+}

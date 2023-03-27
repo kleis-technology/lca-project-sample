@@ -1,0 +1,13 @@
+package multifile
+
+import multifile.substances
+
+process water {
+    products {
+        1 l water
+    }
+
+    resources {
+        1 l water_from_river
+    }
+}

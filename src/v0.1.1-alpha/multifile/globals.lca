@@ -1,0 +1,5 @@
+package multifile
+
+variables {
+    q_water = 10 l
+}

@@ -1,0 +1,14 @@
+package multifile.substances
+
+import multifile.units
+
+substance water_from_river {
+    name = "water, from river"
+    compartment = "river"
+    reference_unit = l
+
+    impacts {
+        1 foo ind_foo
+        1 foo3 ind_foo3
+    }
+}

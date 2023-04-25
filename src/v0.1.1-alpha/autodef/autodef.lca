@@ -6,13 +6,16 @@ process farm_carrot {
     }
 
     inputs {
+        1 kg glyphosate
         1 kg glyphosate from gly_proc(yield = 100 kg)
+        1 kg glyphosate from gly_proc(yield = 500 kg, x = 20 g)
     }
 }
 
 process gly_proc {
     params {
         yield = 300 kg
+        x = 10 g
     }
 
     products {

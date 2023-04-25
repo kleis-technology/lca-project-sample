@@ -1,0 +1,1042 @@
+package ei_371
+
+
+unit ton {
+    symbol = "ton"
+    alias_for = 1000.0 kg
+}
+
+unit _g {
+    symbol = "µg"
+    alias_for = 1.0E-9 kg
+}
+
+unit mg {
+    symbol = "mg"
+    alias_for = 1.0E-6 kg
+}
+
+unit cm3 {
+    symbol = "cm3"
+    alias_for = 1.0E-6 m3
+}
+
+unit mm3 {
+    symbol = "mm3"
+    alias_for = 1.0E-9 m3
+}
+
+unit GJ {
+    symbol = "GJ"
+    alias_for = 1000.0 MJ
+}
+
+unit mBq {
+    symbol = "mBq"
+    alias_for = 0.001 Bq
+}
+
+unit Mtn {
+    symbol = "Mtn"
+    alias_for = 1.0E9 kg
+}
+
+unit PJ {
+    symbol = "PJ"
+    alias_for = 1.0E9 MJ
+}
+
+unit TJ {
+    symbol = "TJ"
+    alias_for = 1000000.0 MJ
+}
+
+unit kgkm {
+    symbol = "kgkm"
+    alias_for = 0.001 tkm
+}
+
+unit ktkm {
+    symbol = "ktkm"
+    alias_for = 1000.0 tkm
+}
+
+unit kton {
+    symbol = "kton"
+    alias_for = 1000000.0 kg
+}
+
+unit ng {
+    symbol = "ng"
+    alias_for = 1.0E-12 kg
+}
+
+unit pg {
+    symbol = "pg"
+    alias_for = 1.0E-15 kg
+}
+
+unit lb {
+    symbol = "lb"
+    alias_for = 0.4535924 kg
+}
+
+unit gal_m {
+    symbol = "gal*"
+    alias_for = 0.003785412 m3
+}
+
+unit cuft {
+    symbol = "cuft"
+    alias_for = 0.02831685 m3
+}
+
+unit Btu {
+    symbol = "Btu"
+    alias_for = 0.001055696 MJ
+}
+
+unit tmi_m {
+    symbol = "tmi*"
+    alias_for = 1.45997 tkm
+}
+
+unit _Bq {
+    symbol = "µBq"
+    alias_for = 1.0E-6 Bq
+}
+
+unit nBq {
+    symbol = "nBq"
+    alias_for = 1.0E-9 Bq
+}
+
+unit oz {
+    symbol = "oz"
+    alias_for = 0.02834952 kg
+}
+
+unit cu_in {
+    symbol = "cu.in"
+    alias_for = 1.638706E-5 m3
+}
+
+unit cu_yd {
+    symbol = "cu.yd"
+    alias_for = 0.7645549 m3
+}
+
+unit ton_sh {
+    symbol = "ton.sh"
+    alias_for = 907.1848 kg
+}
+
+unit ton_lg {
+    symbol = "ton.lg"
+    alias_for = 1016.047 kg
+}
+
+unit cm2 {
+    symbol = "cm2"
+    alias_for = 1.0E-4 m2
+}
+
+unit dm {
+    symbol = "dm"
+    alias_for = 0.1 m
+}
+
+unit dm2 {
+    symbol = "dm2"
+    alias_for = 0.01 m2
+}
+
+unit hr {
+    symbol = "hr"
+    alias_for = 3600.0 s
+}
+
+unit mm2 {
+    symbol = "mm2"
+    alias_for = 1.0E-6 m2
+}
+
+unit _m {
+    symbol = "µm"
+    alias_for = 1.0E-6 m
+}
+
+unit cm2a {
+    symbol = "cm2a"
+    alias_for = 1.0E-4 m2a
+}
+
+unit mm2a {
+    symbol = "mm2a"
+    alias_for = 1.0E-6 m2a
+}
+
+unit km2a {
+    symbol = "km2a"
+    alias_for = 1000000.0 m2a
+}
+
+unit cm3y {
+    symbol = "cm3y"
+    alias_for = 1.0E-6 m3y
+}
+
+unit ft {
+    symbol = "ft"
+    alias_for = 0.3048 m
+}
+
+unit inch {
+    symbol = "inch"
+    alias_for = 0.0254 m
+}
+
+unit yard {
+    symbol = "yard"
+    alias_for = 0.9144 m
+}
+
+unit mile {
+    symbol = "mile"
+    alias_for = 1609.35 m
+}
+
+unit acre {
+    symbol = "acre"
+    alias_for = 4046.856 m2
+}
+
+unit sq_yd {
+    symbol = "sq.yd"
+    alias_for = 0.8361273 m2
+}
+
+unit sq_ft {
+    symbol = "sq.ft"
+    alias_for = 0.09290304 m2
+}
+
+unit sq_in {
+    symbol = "sq.in"
+    alias_for = 6.4516E-4 m2
+}
+
+unit sq_mi {
+    symbol = "sq.mi"
+    alias_for = 2589988.0 m2
+}
+
+unit dm3 {
+    symbol = "dm3"
+    alias_for = 0.001 m3
+}
+
+unit miy {
+    symbol = "miy"
+    alias_for = 1609.35 my
+}
+
+unit kmy {
+    symbol = "kmy"
+    alias_for = 1000.0 my
+}
+
+unit pmi {
+    symbol = "pmi"
+    alias_for = 1.60935 personkm
+}
+
+unit kcal {
+    symbol = "kcal"
+    alias_for = 0.0041855 MJ
+}
+
+unit ha_a {
+    symbol = "ha a"
+    alias_for = 10000.0 m2a
+}
+
+unit l_m_day {
+    symbol = "l*day"
+    alias_for = 2.7397E-6 m3y
+}
+
+unit m3day {
+    symbol = "m3day"
+    alias_for = 0.0027397 m3y
+}
+
+unit SU {
+    symbol = "SU"
+    alias_for = 1.0 p
+}
+
+unit Mp {
+    symbol = "Mp"
+    alias_for = 1000000.0 p
+}
+
+unit mp {
+    symbol = "mp"
+    alias_for = 0.001 p
+}
+
+unit kp {
+    symbol = "kp"
+    alias_for = 1000.0 p
+}
+
+unit _p {
+    symbol = "µp"
+    alias_for = 1.0E-6 p
+}
+
+unit np {
+    symbol = "np"
+    alias_for = 1.0E-9 p
+}
+
+unit t {
+    symbol = "t"
+    alias_for = 1000.0 kg
+}
+
+unit Nm3 {
+    symbol = "Nm3"
+    alias_for = 1.0 m3
+}
+
+unit kJ__Ho {
+    symbol = "kJ (Ho)"
+    alias_for = 0.001 MJ
+}
+
+unit Wash {
+    symbol = "Wash"
+    alias_for = 1.0 p
+}
+
+unit cal {
+    symbol = "cal"
+    alias_for = 4.19E-6 MJ
+}
+
+unit _unit {
+    symbol = "unit"
+    alias_for = 1.0 p
+}
+
+unit a {
+    symbol = "a"
+    alias_for = 3.1536E7 s
+}
+
+unit h {
+    symbol = "h"
+    alias_for = 3600.0 s
+}
+
+unit ma {
+    symbol = "ma"
+    dimension = "length.time"
+}
+
+unit hp_hr {
+    symbol = "hp.hr"
+    alias_for = 2.68451928 MJ
+}
+
+unit pkm {
+    symbol = "pkm"
+    alias_for = 1.0 personkm
+}
+
+unit bushel {
+    symbol = "bushel"
+    alias_for = 0.0352 m3
+}
+
+unit gal {
+    symbol = "gal"
+    alias_for = 0.003785412 m3
+}
+
+unit GWh {
+    symbol = "GWh"
+    alias_for = 3600000.0 MJ
+}
+
+unit kl {
+    symbol = "kl"
+    alias_for = 1.0 m3
+}
+
+unit kWp {
+    symbol = "kWp"
+    alias_for = 3.6 MJ
+}
+
+unit TWh {
+    symbol = "TWh"
+    alias_for = 3.6E9 MJ
+}
+
+unit Gl {
+    symbol = "Gl"
+    alias_for = 1000000.0 m3
+}
+
+unit Tl {
+    symbol = "Tl"
+    alias_for = 1.0E9 m3
+}
+
+unit Mm3 {
+    symbol = "Mm3"
+    alias_for = 1000000.0 m3
+}
+
+unit Gm3 {
+    symbol = "Gm3"
+    alias_for = 1.0E9 m3
+}
+
+unit Mg {
+    symbol = "Mg"
+    alias_for = 1000.0 kg
+}
+
+unit Mj {
+    symbol = "Mj"
+    alias_for = 1.0 MJ
+}
+
+unit TOE {
+    symbol = "TOE"
+    alias_for = 41868.0 MJ
+}
+
+unit tonne {
+    symbol = "tonne"
+    alias_for = 1000.0 kg
+}
+
+unit Mt {
+    symbol = "Mt"
+    alias_for = 1.0E9 kg
+}
+
+unit kt {
+    symbol = "kt"
+    alias_for = 1000000.0 kg
+}
+
+unit CCF {
+    symbol = "CCF"
+    alias_for = 2.831685 m3
+}
+
+unit eBq {
+    symbol = "eBq"
+    alias_for = 1.0E-6 Bq
+}
+
+unit mmBtu {
+    symbol = "mmBtu"
+    alias_for = 1055.696 MJ
+}
+
+unit MMBTU {
+    symbol = "MMBTU"
+    alias_for = 1055.696 MJ
+}
+
+unit MJ_elec {
+    symbol = "MJ elec"
+    alias_for = 1.0 MJ
+}
+
+unit m2y {
+    symbol = "m2y"
+    alias_for = 1.0 m2a
+}
+
+unit m2s {
+    symbol = "m2s"
+    alias_for = 3.17E-8 m2a
+}
+
+unit GPU {
+    symbol = "GPU"
+    alias_for = 2.038 m3
+}
+
+unit Bales {
+    symbol = "Bales"
+    alias_for = 0.085 m3
+}
+
+unit Therms {
+    symbol = "Therms"
+    alias_for = 105.506 MJ
+}
+
+unit Gg {
+    symbol = "Gg"
+    alias_for = 1000000.0 kg
+}
+
+unit m3h {
+    symbol = "m3h"
+    alias_for = 1.141E-4 m3y
+}
+
+unit sqft {
+    symbol = "sqft"
+    alias_for = 0.0929 m2
+}
+
+unit g_km {
+    symbol = "g.km"
+    alias_for = 1.0E-6 tkm
+}
+
+unit tn_sh {
+    symbol = "tn.sh"
+    alias_for = 907.1848 kg
+}
+
+unit tn_lg {
+    symbol = "tn.lg"
+    alias_for = 1016.047 kg
+}
+
+unit HP_Hr {
+    symbol = "HP.Hr"
+    alias_for = 2.684519537 MJ
+}
+
+unit m3_g {
+    symbol = "m3/g"
+    alias_for = 0.001 kg
+}
+
+unit m_m__m_2 {
+    symbol = "m**2"
+    alias_for = 1.0 m2
+}
+
+unit m_m__m_2a {
+    symbol = "m**2a"
+    alias_for = 1.0 m2a
+}
+
+unit m_m__m_3 {
+    symbol = "m**3"
+    alias_for = 1.0 m3
+}
+
+unit Nm_m__m_3 {
+    symbol = "Nm**3"
+    alias_for = 1.0 m3
+}
+
+unit Cs {
+    symbol = "Cs"
+    alias_for = 1.0 MJ
+}
+
+unit Nm3_F_v6 {
+    symbol = "Nm3 F-v6"
+    alias_for = 36.894 MJ
+}
+
+unit NM3_Norway {
+    symbol = "NM3-Norway"
+    alias_for = 40.8 MJ
+}
+
+unit Nm3_Russia {
+    symbol = "Nm3-Russia"
+    alias_for = 36.4 MJ
+}
+
+unit Nm3_DZ {
+    symbol = "Nm3-DZ"
+    alias_for = 38.5 MJ
+}
+
+unit Nm3_GB {
+    symbol = "Nm3-GB"
+    alias_for = 37.0 MJ
+}
+
+unit Nm3_DE {
+    symbol = "Nm3-DE"
+    alias_for = 35.0 MJ
+}
+
+unit Nm3_NL {
+    symbol = "Nm3-NL"
+    alias_for = 34.9 MJ
+}
+
+unit kg_NL {
+    symbol = "kg-NL"
+    alias_for = 42.4 MJ
+}
+
+unit Nm3__Italy {
+    symbol = "Nm3- Italy"
+    alias_for = 33.85 MJ
+}
+
+unit Nm3_Europe {
+    symbol = "Nm3 Europe"
+    alias_for = 37.5 MJ
+}
+
+unit tOM {
+    symbol = "tOM"
+    alias_for = 1000.0 kg
+}
+
+unit tMS {
+    symbol = "tMS"
+    alias_for = 1000.0 kg
+}
+
+unit tMB {
+    symbol = "tMB"
+    alias_for = 1000.0 kg
+}
+
+unit Nm3_FR {
+    symbol = "Nm3 FR"
+    alias_for = 37.09 MJ
+}
+
+unit Nm3___EG {
+    symbol = "Nm3 - EG"
+    alias_for = 38.5 MJ
+}
+
+unit Nm3___NG {
+    symbol = "Nm3 - NG"
+    alias_for = 38.5 MJ
+}
+
+unit cases {
+    symbol = "cases"
+    alias_for = 1.0 p
+}
+
+unit Nautic_mil {
+    symbol = "Nautic mil"
+    alias_for = 1547.896 m
+}
+
+unit MBq {
+    symbol = "MBq"
+    alias_for = 1000000.0 Bq
+}
+
+unit eu {
+    symbol = "eu"
+    alias_for = 1.0 kg
+}
+
+unit BTU {
+    symbol = "BTU"
+    alias_for = 0.001055696 MJ
+}
+
+unit HH {
+    symbol = "HH"
+    alias_for = 1.0 p
+}
+
+unit Kg {
+    symbol = "Kg"
+    alias_for = 1.0 p
+}
+
+unit cycle {
+    symbol = "cycle"
+    alias_for = 1.0 p
+}
+
+unit ton_m {
+    symbol = "ton*"
+    alias_for = 907.1847 kg
+}
+
+unit ML {
+    symbol = "ML"
+    alias_for = 1000.0 m3
+}
+
+unit m2_m_year {
+    symbol = "m2*year"
+    alias_for = 1.0 m2
+}
+
+unit g_m3 {
+    symbol = "g/m3"
+    alias_for = 1.0 kg
+}
+
+unit gkm {
+    symbol = "gkm"
+    alias_for = 1.0E-6 tkm
+}
+
+unit yd3 {
+    symbol = "yd3"
+    alias_for = 0.7645 m3
+}
+
+unit kmk {
+    symbol = "kmk"
+    alias_for = 0.001 tkm
+}
+
+unit ktk {
+    symbol = "ktk"
+    alias_for = 1000.0 tkm
+}
+
+unit Ttk {
+    symbol = "Ttk"
+    alias_for = 1.0E12 tkm
+}
+
+unit eg {
+    symbol = "eg"
+    alias_for = 1.0E-9 kg
+}
+
+unit yr {
+    symbol = "yr"
+    alias_for = 3.1536E7 s
+}
+
+unit kg_m_day {
+    symbol = "kg*day"
+    alias_for = 0.00274 kgy
+}
+
+unit BCAPU {
+    symbol = "BCAPU"
+    alias_for = 833.0 kg
+}
+
+unit MEU {
+    symbol = "MEU"
+    alias_for = 1.0 kg
+}
+
+unit T_R {
+    symbol = "T.R."
+    alias_for = 1.0 MJ
+}
+
+unit TL {
+    symbol = "TL"
+    alias_for = 1.0E9 m3
+}
+
+unit GL {
+    symbol = "GL"
+    alias_for = 1000000.0 m3
+}
+
+unit kgCOD {
+    symbol = "kgCOD"
+    alias_for = 1.0 kg
+}
+
+unit Ml {
+    symbol = "Ml"
+    alias_for = 1000.0 m3
+}
+
+unit aaa {
+    symbol = "aaa"
+    alias_for = 1.0 kg
+}
+
+unit kg_NO {
+    symbol = "kg-NO"
+    alias_for = 56.6 MJ
+}
+
+unit kg_RU {
+    symbol = "kg-RU"
+    alias_for = 49.3 MJ
+}
+
+unit kg_GB {
+    symbol = "kg-GB"
+    alias_for = 47.0 MJ
+}
+
+unit kg_DZ {
+    symbol = "kg-DZ"
+    alias_for = 49.7 MJ
+}
+
+unit kg_DE {
+    symbol = "kg-DE"
+    alias_for = 45.9 MJ
+}
+
+unit T {
+    symbol = "T"
+    alias_for = 1000.0 kg
+}
+
+unit Ha_a {
+    symbol = "Ha_a"
+    alias_for = 10000.0 m2a
+}
+
+unit work_hours {
+    symbol = "work hours"
+    alias_for = 1.0 p
+}
+
+unit _mm_m_m2_a {
+    symbol = "(mm*m2)/a"
+    dimension = "volume.time"
+}
+
+unit cuin {
+    symbol = "cuin"
+    alias_for = 1.64E-5 m3
+}
+
+unit sqin {
+    symbol = "sqin"
+    alias_for = 6.45E-4 m2
+}
+
+unit ug {
+    symbol = "ug"
+    alias_for = 1.0E-9 kg
+}
+
+unit _100 {
+    symbol = "100%"
+    alias_for = 1.0 kg
+}
+
+unit metric_to {
+    symbol = "metric to."
+    alias_for = 1000.0 kg
+}
+
+unit Unit {
+    symbol = "Unit"
+    alias_for = 1.0 p
+}
+
+unit A {
+    symbol = "A"
+    alias_for = 1.0E-10 m
+}
+
+unit MT_m {
+    symbol = "MT*"
+    alias_for = 9.071847E8 kg
+}
+
+unit _5g {
+    symbol = "5g"
+    alias_for = 1.0E-9 kg
+}
+
+unit fg {
+    symbol = "fg"
+    alias_for = 1.0E-9 kg
+}
+
+unit EU {
+    symbol = "EU"
+    alias_for = 0.45454545 kg
+}
+
+unit MCF {
+    symbol = "MCF"
+    alias_for = 28.31685 m3
+}
+
+unit MMCF {
+    symbol = "MMCF"
+    alias_for = 28316.85 m3
+}
+
+unit _5Bq {
+    symbol = "5Bq"
+    alias_for = 1.0E-6 Bq
+}
+
+unit m3sub {
+    symbol = "m3sub"
+    alias_for = 1.0 m3
+}
+
+unit _1000_pers {
+    symbol = "1000 pers"
+    alias_for = 1000.0 p
+}
+
+unit million_h {
+    symbol = "million h"
+    alias_for = 3.6E9 s
+}
+
+unit guestnight {
+    symbol = "guestnight"
+    alias_for = 1.0 p
+}
+
+unit Oz {
+    symbol = "Oz"
+    alias_for = 0.02835 kg
+}
+
+unit OA33z {
+    symbol = "OA33z"
+    alias_for = 0.02835 kg
+}
+
+unit MJe {
+    symbol = "MJe"
+    alias_for = 1.0 MJ
+}
+
+unit z {
+    symbol = "z"
+    alias_for = 0.02834952 kg
+}
+
+unit m_ou_m2 {
+    symbol = "m ou m2"
+    alias_for = 1.0 p
+}
+
+unit kg_N1 {
+    symbol = "kg N1"
+    alias_for = 1.0 kg
+}
+
+unit kg_enlev {
+    symbol = "kg enlevé"
+    alias_for = 1.0 kg
+}
+
+unit oz__fl {
+    symbol = "oz (fl)"
+    alias_for = 2.96E-5 m3
+}
+
+unit M3 {
+    symbol = "M3"
+    alias_for = 1.0 m3
+}
+
+unit Kl {
+    symbol = "Kl"
+    alias_for = 1.0 m3
+}
+
+unit kM3 {
+    symbol = "kM3"
+    alias_for = 1000.0 m3
+}
+
+unit bbl {
+    symbol = "bbl"
+    alias_for = 0.15898729 m3
+}
+
+unit MMBtu {
+    symbol = "MMBtu"
+    alias_for = 1055.87 MJ
+}
+
+unit Mscf {
+    symbol = "Mscf"
+    alias_for = 28.1685 m3
+}
+
+unit Mton {
+    symbol = "Mton"
+    alias_for = 1.0E9 kg
+}
+
+unit km3 {
+    symbol = "km3"
+    alias_for = 1.0E9 m3
+}
+
+unit m3hour {
+    symbol = "m3hour"
+    alias_for = 1.1415E-4 m3y
+}
+
+unit cm_m_m2_d {
+    symbol = "cm*m2/d"
+    alias_for = 1.0 m3y
+}
+
+unit Bushel {
+    symbol = "Bushel"
+    alias_for = 27.21 kg
+}
+
+unit m3M {
+    symbol = "m3M"
+    alias_for = 1000000.0 m3
+}
+
+unit M_m3 {
+    symbol = "M m3"
+    alias_for = 1000000.0 m3
+}
+
+unit Ag {
+    symbol = "Ag"
+    alias_for = 1.0E-9 kg
+}
+
+unit fl__oz {
+    symbol = "fl. oz"
+    alias_for = 2.957353E-5 m3
+}
+
+unit BoardFoot {
+    symbol = "BoardFoot"
+    alias_for = 0.00235974 m3
+}
+
+unit km2y {
+    symbol = "km2y"
+    alias_for = 1000000.0 m2a
+}
+
+unit mm2y {
+    symbol = "mm2y"
+    alias_for = 1.0E-6 m2a
+}
+
+unit cm2y {
+    symbol = "cm2y"
+    alias_for = 1.0E-4 m2a
+}

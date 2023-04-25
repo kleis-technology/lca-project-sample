@@ -1,0 +1,20 @@
+package unit_expression
+
+unit foo {
+    symbol = "foo"
+    dimension = "foo"
+}
+
+unit bar {
+    symbol = "bar"
+    alias_for = 3 foo
+}
+
+process p {
+    products {
+        1 kg p
+    }
+    inputs {
+        1 bar q
+    }
+}

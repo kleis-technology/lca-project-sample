@@ -1,0 +1,21 @@
+package recursive.r2
+
+
+
+process p {
+    params {
+        q = 0.8 kg
+    }
+
+    products {
+        1 kg carrot
+    }
+
+    inputs {
+        q carrot
+    }
+
+    emissions {
+        1 kg co2
+    }
+}

@@ -1,6 +1,7 @@
 package multifile
 
 import multifile.substances
+import multifile.units
 
 process carrot {
     params {

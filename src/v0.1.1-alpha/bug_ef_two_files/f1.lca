@@ -1,0 +1,12 @@
+package bug_ef_two_files.v0_1_1.ssii
+
+
+
+process laptop {
+    products {
+        1 hour laptop
+    }
+    inputs {
+        1 hour operation_computer
+    }
+}

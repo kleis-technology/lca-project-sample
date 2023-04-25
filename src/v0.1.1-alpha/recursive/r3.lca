@@ -1,0 +1,30 @@
+package recursive.r3
+
+
+
+process p {
+    params {
+        q = 1 kg
+    }
+    products {
+        1 kg c
+    }
+    inputs {
+        0.8 kg c2 from p2(q = q + 1 kg)
+    }
+    emissions {
+        1 kg co2
+    }
+}
+
+process p2 {
+    params {
+        q = 1 kg
+    }
+    products {
+        1 kg c2
+    }
+    inputs {
+        0.8 kg c from p(q = q - 1 kg)
+    }
+}

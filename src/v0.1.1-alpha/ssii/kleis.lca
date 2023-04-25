@@ -1,5 +1,6 @@
 package v0_1_1.ssii
 
+import ef31
 
 /*
     Process definitions
@@ -7,7 +8,7 @@ package v0_1_1.ssii
 
 process kleis {
     params {
-        n_employees = 7 person
+        n_employees = 10 person
         surface = 150 m2
     }
 

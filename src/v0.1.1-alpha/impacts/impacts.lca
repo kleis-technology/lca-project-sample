@@ -1,0 +1,33 @@
+package my_impacts
+
+process p {
+    products {
+        1 kg a
+    }
+    emissions {
+        1 kg b
+        1 kg c
+    }
+}
+
+substance b {
+    name = "b"
+    type = Emission
+    compartment = "c"
+    reference_unit = kg
+
+    impacts {
+        1 kg co2
+    }
+}
+
+substance c {
+    name = "c"
+    type = Emission
+    compartment = "c"
+    reference_unit = kg
+
+    impacts {
+        1000 g co2
+    }
+}

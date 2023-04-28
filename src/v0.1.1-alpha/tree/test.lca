@@ -1,0 +1,1012 @@
+package ch.kleis.generated.connectedtest
+
+process proc_0 {
+	products {
+		1 kg prod_0
+	}
+	inputs {
+		1 kg prod_46
+		1 kg prod_41
+		1 kg prod_82
+	}
+}
+process proc_1 {
+	products {
+		1 kg prod_1
+	}
+	inputs {
+		1 kg prod_28
+		1 kg prod_16
+		1 kg prod_66
+	}
+}
+process proc_2 {
+	products {
+		1 kg prod_2
+	}
+	inputs {
+		1 kg prod_56
+		1 kg prod_85
+		1 kg prod_1
+	}
+}
+process proc_3 {
+	products {
+		1 kg prod_3
+	}
+	inputs {
+		1 kg prod_15
+		1 kg prod_11
+		1 kg prod_52
+	}
+}
+process proc_4 {
+	products {
+		1 kg prod_4
+	}
+	inputs {
+		1 kg prod_69
+		1 kg prod_22
+		1 kg prod_39
+	}
+}
+process proc_5 {
+	products {
+		1 kg prod_5
+	}
+	inputs {
+		1 kg prod_2
+		1 kg prod_79
+		1 kg prod_96
+	}
+}
+process proc_6 {
+	products {
+		1 kg prod_6
+	}
+	inputs {
+		1 kg prod_44
+		1 kg prod_5
+		1 kg prod_13
+	}
+}
+process proc_7 {
+	products {
+		1 kg prod_7
+	}
+	inputs {
+		1 kg prod_6
+		1 kg prod_54
+		1 kg prod_27
+	}
+}
+process proc_8 {
+	products {
+		1 kg prod_8
+	}
+	inputs {
+		1 kg prod_48
+		1 kg prod_97
+		1 kg prod_83
+	}
+}
+process proc_9 {
+	products {
+		1 kg prod_9
+	}
+	inputs {
+		1 kg prod_89
+		1 kg prod_36
+		1 kg prod_50
+	}
+}
+process proc_10 {
+	products {
+		1 kg prod_10
+	}
+	inputs {
+		1 kg prod_84
+		1 kg prod_41
+		1 kg prod_86
+	}
+}
+process proc_11 {
+	products {
+		1 kg prod_11
+	}
+	inputs {
+		1 kg prod_83
+		1 kg prod_19
+		1 kg prod_48
+	}
+}
+process proc_12 {
+	products {
+		1 kg prod_12
+	}
+	inputs {
+		1 kg prod_99
+		1 kg prod_31
+		1 kg prod_4
+	}
+}
+process proc_13 {
+	products {
+		1 kg prod_13
+	}
+	inputs {
+		1 kg prod_64
+		1 kg prod_49
+		1 kg prod_19
+	}
+}
+process proc_14 {
+	products {
+		1 kg prod_14
+	}
+	inputs {
+		1 kg prod_50
+		1 kg prod_66
+		1 kg prod_43
+	}
+}
+process proc_15 {
+	products {
+		1 kg prod_15
+	}
+	inputs {
+		1 kg prod_76
+		1 kg prod_82
+		1 kg prod_32
+	}
+}
+process proc_16 {
+	products {
+		1 kg prod_16
+	}
+	inputs {
+		1 kg prod_52
+		1 kg prod_15
+		1 kg prod_2
+	}
+}
+process proc_17 {
+	products {
+		1 kg prod_17
+	}
+	inputs {
+		1 kg prod_39
+		1 kg prod_93
+		1 kg prod_79
+	}
+}
+process proc_18 {
+	products {
+		1 kg prod_18
+	}
+	inputs {
+		1 kg prod_8
+		1 kg prod_34
+		1 kg prod_9
+	}
+}
+process proc_19 {
+	products {
+		1 kg prod_19
+	}
+	inputs {
+		1 kg prod_29
+		1 kg prod_29
+		1 kg prod_34
+	}
+}
+process proc_20 {
+	products {
+		1 kg prod_20
+	}
+	inputs {
+		1 kg prod_95
+		1 kg prod_11
+		1 kg prod_49
+	}
+}
+process proc_21 {
+	products {
+		1 kg prod_21
+	}
+	inputs {
+		1 kg prod_85
+		1 kg prod_66
+		1 kg prod_60
+	}
+}
+process proc_22 {
+	products {
+		1 kg prod_22
+	}
+	inputs {
+		1 kg prod_83
+		1 kg prod_11
+		1 kg prod_96
+	}
+}
+process proc_23 {
+	products {
+		1 kg prod_23
+	}
+	inputs {
+		1 kg prod_34
+		1 kg prod_46
+		1 kg prod_37
+	}
+}
+process proc_24 {
+	products {
+		1 kg prod_24
+	}
+	inputs {
+		1 kg prod_12
+		1 kg prod_54
+		1 kg prod_98
+	}
+}
+process proc_25 {
+	products {
+		1 kg prod_25
+	}
+	inputs {
+		1 kg prod_20
+		1 kg prod_32
+		1 kg prod_65
+	}
+}
+process proc_26 {
+	products {
+		1 kg prod_26
+	}
+	inputs {
+		1 kg prod_55
+		1 kg prod_64
+		1 kg prod_28
+	}
+}
+process proc_27 {
+	products {
+		1 kg prod_27
+	}
+	inputs {
+		1 kg prod_55
+		1 kg prod_16
+		1 kg prod_48
+	}
+}
+process proc_28 {
+	products {
+		1 kg prod_28
+	}
+	inputs {
+		1 kg prod_37
+		1 kg prod_90
+		1 kg prod_32
+	}
+}
+process proc_29 {
+	products {
+		1 kg prod_29
+	}
+	inputs {
+		1 kg prod_10
+		1 kg prod_46
+		1 kg prod_10
+	}
+}
+process proc_30 {
+	products {
+		1 kg prod_30
+	}
+	inputs {
+		1 kg prod_53
+		1 kg prod_27
+		1 kg prod_18
+	}
+}
+process proc_31 {
+	products {
+		1 kg prod_31
+	}
+	inputs {
+		1 kg prod_75
+		1 kg prod_45
+		1 kg prod_95
+	}
+}
+process proc_32 {
+	products {
+		1 kg prod_32
+	}
+	inputs {
+		1 kg prod_95
+		1 kg prod_55
+		1 kg prod_78
+	}
+}
+process proc_33 {
+	products {
+		1 kg prod_33
+	}
+	inputs {
+		1 kg prod_31
+		1 kg prod_17
+		1 kg prod_73
+	}
+}
+process proc_34 {
+	products {
+		1 kg prod_34
+	}
+	inputs {
+		1 kg prod_35
+		1 kg prod_63
+		1 kg prod_2
+	}
+}
+process proc_35 {
+	products {
+		1 kg prod_35
+	}
+	inputs {
+		1 kg prod_48
+		1 kg prod_17
+		1 kg prod_46
+	}
+}
+process proc_36 {
+	products {
+		1 kg prod_36
+	}
+	inputs {
+		1 kg prod_76
+		1 kg prod_56
+		1 kg prod_26
+	}
+}
+process proc_37 {
+	products {
+		1 kg prod_37
+	}
+	inputs {
+		1 kg prod_58
+		1 kg prod_48
+		1 kg prod_55
+	}
+}
+process proc_38 {
+	products {
+		1 kg prod_38
+	}
+	inputs {
+		1 kg prod_1
+		1 kg prod_47
+		1 kg prod_0
+	}
+}
+process proc_39 {
+	products {
+		1 kg prod_39
+	}
+	inputs {
+		1 kg prod_11
+		1 kg prod_26
+		1 kg prod_15
+	}
+}
+process proc_40 {
+	products {
+		1 kg prod_40
+	}
+	inputs {
+		1 kg prod_52
+		1 kg prod_60
+		1 kg prod_48
+	}
+}
+process proc_41 {
+	products {
+		1 kg prod_41
+	}
+	inputs {
+		1 kg prod_12
+		1 kg prod_88
+		1 kg prod_26
+	}
+}
+process proc_42 {
+	products {
+		1 kg prod_42
+	}
+	inputs {
+		1 kg prod_39
+		1 kg prod_0
+		1 kg prod_40
+	}
+}
+process proc_43 {
+	products {
+		1 kg prod_43
+	}
+	inputs {
+		1 kg prod_88
+		1 kg prod_47
+		1 kg prod_64
+	}
+}
+process proc_44 {
+	products {
+		1 kg prod_44
+	}
+	inputs {
+		1 kg prod_10
+		1 kg prod_4
+		1 kg prod_56
+	}
+}
+process proc_45 {
+	products {
+		1 kg prod_45
+	}
+	inputs {
+		1 kg prod_15
+		1 kg prod_0
+		1 kg prod_93
+	}
+}
+process proc_46 {
+	products {
+		1 kg prod_46
+	}
+	inputs {
+		1 kg prod_86
+		1 kg prod_54
+		1 kg prod_22
+	}
+}
+process proc_47 {
+	products {
+		1 kg prod_47
+	}
+	inputs {
+		1 kg prod_54
+		1 kg prod_90
+		1 kg prod_88
+	}
+}
+process proc_48 {
+	products {
+		1 kg prod_48
+	}
+	inputs {
+		1 kg prod_54
+		1 kg prod_85
+		1 kg prod_63
+	}
+}
+process proc_49 {
+	products {
+		1 kg prod_49
+	}
+	inputs {
+		1 kg prod_41
+		1 kg prod_22
+		1 kg prod_43
+	}
+}
+process proc_50 {
+	products {
+		1 kg prod_50
+	}
+	inputs {
+		1 kg prod_15
+		1 kg prod_16
+		1 kg prod_46
+	}
+}
+process proc_51 {
+	products {
+		1 kg prod_51
+	}
+	inputs {
+		1 kg prod_13
+		1 kg prod_94
+		1 kg prod_23
+	}
+}
+process proc_52 {
+	products {
+		1 kg prod_52
+	}
+	inputs {
+		1 kg prod_51
+		1 kg prod_54
+		1 kg prod_84
+	}
+}
+process proc_53 {
+	products {
+		1 kg prod_53
+	}
+	inputs {
+		1 kg prod_29
+		1 kg prod_62
+		1 kg prod_51
+	}
+}
+process proc_54 {
+	products {
+		1 kg prod_54
+	}
+	inputs {
+		1 kg prod_55
+		1 kg prod_34
+		1 kg prod_62
+	}
+}
+process proc_55 {
+	products {
+		1 kg prod_55
+	}
+	inputs {
+		1 kg prod_11
+		1 kg prod_35
+		1 kg prod_53
+	}
+}
+process proc_56 {
+	products {
+		1 kg prod_56
+	}
+	inputs {
+		1 kg prod_16
+		1 kg prod_79
+		1 kg prod_54
+	}
+}
+process proc_57 {
+	products {
+		1 kg prod_57
+	}
+	inputs {
+		1 kg prod_34
+		1 kg prod_34
+		1 kg prod_30
+	}
+}
+process proc_58 {
+	products {
+		1 kg prod_58
+	}
+	inputs {
+		1 kg prod_4
+		1 kg prod_20
+		1 kg prod_16
+	}
+}
+process proc_59 {
+	products {
+		1 kg prod_59
+	}
+	inputs {
+		1 kg prod_88
+		1 kg prod_64
+		1 kg prod_69
+	}
+}
+process proc_60 {
+	products {
+		1 kg prod_60
+	}
+	inputs {
+		1 kg prod_65
+		1 kg prod_95
+		1 kg prod_52
+	}
+}
+process proc_61 {
+	products {
+		1 kg prod_61
+	}
+	inputs {
+		1 kg prod_26
+		1 kg prod_48
+		1 kg prod_52
+	}
+}
+process proc_62 {
+	products {
+		1 kg prod_62
+	}
+	inputs {
+		1 kg prod_41
+		1 kg prod_79
+		1 kg prod_46
+	}
+}
+process proc_63 {
+	products {
+		1 kg prod_63
+	}
+	inputs {
+		1 kg prod_55
+		1 kg prod_59
+		1 kg prod_23
+	}
+}
+process proc_64 {
+	products {
+		1 kg prod_64
+	}
+	inputs {
+		1 kg prod_6
+		1 kg prod_13
+		1 kg prod_31
+	}
+}
+process proc_65 {
+	products {
+		1 kg prod_65
+	}
+	inputs {
+		1 kg prod_87
+		1 kg prod_29
+		1 kg prod_23
+	}
+}
+process proc_66 {
+	products {
+		1 kg prod_66
+	}
+	inputs {
+		1 kg prod_28
+		1 kg prod_26
+		1 kg prod_26
+	}
+}
+process proc_67 {
+	products {
+		1 kg prod_67
+	}
+	inputs {
+		1 kg prod_3
+		1 kg prod_5
+		1 kg prod_22
+	}
+}
+process proc_68 {
+	products {
+		1 kg prod_68
+	}
+	inputs {
+		1 kg prod_49
+		1 kg prod_46
+		1 kg prod_74
+	}
+}
+process proc_69 {
+	products {
+		1 kg prod_69
+	}
+	inputs {
+		1 kg prod_65
+		1 kg prod_3
+		1 kg prod_36
+	}
+}
+process proc_70 {
+	products {
+		1 kg prod_70
+	}
+	inputs {
+		1 kg prod_16
+		1 kg prod_17
+		1 kg prod_41
+	}
+}
+process proc_71 {
+	products {
+		1 kg prod_71
+	}
+	inputs {
+		1 kg prod_8
+		1 kg prod_55
+		1 kg prod_23
+	}
+}
+process proc_72 {
+	products {
+		1 kg prod_72
+	}
+	inputs {
+		1 kg prod_92
+		1 kg prod_61
+		1 kg prod_31
+	}
+}
+process proc_73 {
+	products {
+		1 kg prod_73
+	}
+	inputs {
+		1 kg prod_30
+		1 kg prod_51
+		1 kg prod_19
+	}
+}
+process proc_74 {
+	products {
+		1 kg prod_74
+	}
+	inputs {
+		1 kg prod_12
+		1 kg prod_96
+		1 kg prod_36
+	}
+}
+process proc_75 {
+	products {
+		1 kg prod_75
+	}
+	inputs {
+		1 kg prod_51
+		1 kg prod_98
+		1 kg prod_61
+	}
+}
+process proc_76 {
+	products {
+		1 kg prod_76
+	}
+	inputs {
+		1 kg prod_16
+		1 kg prod_40
+		1 kg prod_56
+	}
+}
+process proc_77 {
+	products {
+		1 kg prod_77
+	}
+	inputs {
+		1 kg prod_51
+		1 kg prod_1
+		1 kg prod_52
+	}
+}
+process proc_78 {
+	products {
+		1 kg prod_78
+	}
+	inputs {
+		1 kg prod_16
+		1 kg prod_87
+		1 kg prod_45
+	}
+}
+process proc_79 {
+	products {
+		1 kg prod_79
+	}
+	inputs {
+		1 kg prod_78
+		1 kg prod_49
+		1 kg prod_12
+	}
+}
+process proc_80 {
+	products {
+		1 kg prod_80
+	}
+	inputs {
+		1 kg prod_41
+		1 kg prod_68
+		1 kg prod_74
+	}
+}
+process proc_81 {
+	products {
+		1 kg prod_81
+	}
+	inputs {
+		1 kg prod_12
+		1 kg prod_84
+		1 kg prod_3
+	}
+}
+process proc_82 {
+	products {
+		1 kg prod_82
+	}
+	inputs {
+		1 kg prod_74
+		1 kg prod_88
+		1 kg prod_0
+	}
+}
+process proc_83 {
+	products {
+		1 kg prod_83
+	}
+	inputs {
+		1 kg prod_7
+		1 kg prod_74
+		1 kg prod_7
+	}
+}
+process proc_84 {
+	products {
+		1 kg prod_84
+	}
+	inputs {
+		1 kg prod_47
+		1 kg prod_8
+		1 kg prod_17
+	}
+}
+process proc_85 {
+	products {
+		1 kg prod_85
+	}
+	inputs {
+		1 kg prod_3
+		1 kg prod_18
+		1 kg prod_75
+	}
+}
+process proc_86 {
+	products {
+		1 kg prod_86
+	}
+	inputs {
+		1 kg prod_73
+		1 kg prod_47
+		1 kg prod_85
+	}
+}
+process proc_87 {
+	products {
+		1 kg prod_87
+	}
+	inputs {
+		1 kg prod_16
+		1 kg prod_93
+		1 kg prod_77
+	}
+}
+process proc_88 {
+	products {
+		1 kg prod_88
+	}
+	inputs {
+		1 kg prod_82
+		1 kg prod_68
+		1 kg prod_85
+	}
+}
+process proc_89 {
+	products {
+		1 kg prod_89
+	}
+	inputs {
+		1 kg prod_74
+		1 kg prod_36
+		1 kg prod_61
+	}
+}
+process proc_90 {
+	products {
+		1 kg prod_90
+	}
+	inputs {
+		1 kg prod_87
+		1 kg prod_89
+		1 kg prod_54
+	}
+}
+process proc_91 {
+	products {
+		1 kg prod_91
+	}
+	inputs {
+		1 kg prod_24
+		1 kg prod_7
+		1 kg prod_41
+	}
+}
+process proc_92 {
+	products {
+		1 kg prod_92
+	}
+	inputs {
+		1 kg prod_10
+		1 kg prod_35
+		1 kg prod_81
+	}
+}
+process proc_93 {
+	products {
+		1 kg prod_93
+	}
+	inputs {
+		1 kg prod_22
+		1 kg prod_46
+		1 kg prod_51
+	}
+}
+process proc_94 {
+	products {
+		1 kg prod_94
+	}
+	inputs {
+		1 kg prod_21
+		1 kg prod_9
+		1 kg prod_37
+	}
+}
+process proc_95 {
+	products {
+		1 kg prod_95
+	}
+	inputs {
+		1 kg prod_61
+		1 kg prod_85
+		1 kg prod_78
+	}
+}
+process proc_96 {
+	products {
+		1 kg prod_96
+	}
+	inputs {
+		1 kg prod_12
+		1 kg prod_59
+		1 kg prod_94
+	}
+}
+process proc_97 {
+	products {
+		1 kg prod_97
+	}
+	inputs {
+		1 kg prod_30
+		1 kg prod_87
+		1 kg prod_31
+	}
+}
+process proc_98 {
+	products {
+		1 kg prod_98
+	}
+	inputs {
+		1 kg prod_42
+		1 kg prod_68
+		1 kg prod_36
+	}
+}
+process proc_99 {
+	products {
+		1 kg prod_99
+	}
+	inputs {
+		1 kg prod_52
+		1 kg prod_2
+		1 kg prod_36
+	}
+}
+process proc_100 {
+	products {
+		1 kg prod_100
+	}
+	inputs {
+		1 kg prod_92
+		1 kg prod_41
+		1 kg prod_23
+	}
+}

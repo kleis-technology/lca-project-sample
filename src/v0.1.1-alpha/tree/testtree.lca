@@ -1,0 +1,105 @@
+package ch.kleis.generated.treetest
+
+process proc_8 {
+	products {
+		1 kg prod_8
+	}
+}
+process proc_7 {
+	products {
+		1 kg prod_7
+	}
+}
+process proc_6 {
+	products {
+		1 kg prod_6
+	}
+}
+process proc_5 {
+	products {
+		1 kg prod_5
+	}
+}
+process proc_4 {
+	products {
+		1 kg prod_4
+	}
+}
+process proc_3 {
+	products {
+		1 kg prod_3
+	}
+}
+process proc_2 {
+	products {
+		1 kg prod_2
+	}
+}
+process proc_1 {
+	products {
+		1 kg prod_1
+	}
+}
+process proc_12 {
+	products {
+		1 kg prod_12
+	}
+	inputs {
+		1 kg prod_8
+		1 kg prod_7
+	}
+}
+process proc_11 {
+	products {
+		1 kg prod_11
+	}
+	inputs {
+		1 kg prod_6
+		1 kg prod_5
+	}
+}
+process proc_10 {
+	products {
+		1 kg prod_10
+	}
+	inputs {
+		1 kg prod_4
+		1 kg prod_3
+	}
+}
+process proc_9 {
+	products {
+		1 kg prod_9
+	}
+	inputs {
+		1 kg prod_2
+		1 kg prod_1
+	}
+}
+process proc_14 {
+	products {
+		1 kg prod_14
+	}
+	inputs {
+		1 kg prod_12
+		1 kg prod_11
+	}
+}
+process proc_13 {
+	products {
+		1 kg prod_13
+	}
+	inputs {
+		1 kg prod_10
+		1 kg prod_9
+	}
+}
+process proc_15 {
+	products {
+		1 kg prod_15
+	}
+	inputs {
+		1 kg prod_14
+		1 kg prod_13
+	}
+}

@@ -1,0 +1,56 @@
+package net.thedesroches.joachim.test
+
+import ef30
+
+substance co_2 {
+    name = "CO_2"
+    type = Resource
+    compartment = "land"
+    reference_unit = m3
+    impacts {
+        -5 kg climate_change
+    }
+}
+
+substance co_2 {
+    name = "CO_2"
+    type = Emission
+    compartment = "land"
+    sub_compartment = "underground"
+    reference_unit = m3
+    impacts {
+        -5 kg climate_change
+    }
+}
+
+substance lu {
+    name = "lu"
+    type = Land_use
+    compartment = "land"
+    reference_unit = ha
+}
+
+process bar {
+    products {
+        1 kg bar
+    }
+    resources {
+        5 l co_2 ( compartment = "land", sub_compartment = "unknwon" )
+        5 m3 co_2( compartment = "land" )
+    }
+    land_use {
+        1 kg lu( compartment = "land" )
+    }
+}
+
+process foo {
+    products {
+        1 kg foo
+    }
+    resources {
+        1 kg cadmium(compartment="ground", sub_compartment="non-renewable")
+    }
+    land_use {
+        1 ha construction_site(compartment="land occupation")
+    }
+}

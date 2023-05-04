@@ -28,6 +28,6 @@ substance c {
     reference_unit = kg
 
     impacts {
-        1000 g co2
+        1 kg co2
     }
 }

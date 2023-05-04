@@ -9,6 +9,9 @@ process proc_0 {
 		1 kg prod_41
 		1 kg prod_82
 	}
+	emissions {
+		1 kg co2
+	}
 }
 process proc_1 {
 	products {

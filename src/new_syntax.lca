@@ -1,0 +1,129 @@
+package snapshot
+
+/*****
+**
+** Cas avec 2 process capable de produire 2 types d'un même produit
+**
+**
+*/
+process CpuIntel {
+    params {
+        litho = 4 nm
+        frequ = 1 Hz
+    }
+
+    products {
+        1 u CPU(model = "Intel" ) // Ici on déclare ce qu'on produit
+    }
+
+    inputs{
+      // Comme d'hab
+    }
+}
+
+process CpuArm {
+    params {
+         litho = 5 nm
+         frequ = 1 Hz
+    }
+
+    products {
+        1 u CPU(model = "Arm" )
+     }
+
+     inputs {
+       // Comme d'hab
+     }
+ }
+
+// A l'utilisation, cas de synergie: pas besoin de connaitre les details d'un proc Intel pour l'utiliser
+process laptop {
+    params {
+          procModel = "Intel" // QQQ c'est quoi ce parametre sans type ? Une nouvelle unité 'StringLiteral' ?
+    }
+    products {
+        1 u laptop
+    }
+    inputs {
+        1 u CPU(model=procModel)    // Ici on ne passe pas un paramètre au process, mais le 'type' de CPU que l'on veut
+           // Le resolver doit résoudre sur CpuIntel, si 0 ou 2+ solutions => erreur
+    }
+}
+
+/*
+***
+*** A l'utilisation, cas de l'import ecoinvent, ou pour l'instant les process ne sont pas variabilisés => on référence un process
+***
+*/
+process market_for_cast_iron_glo {
+     params {
+        carbureSize = 1 nm // Histoire d'avoir un parametre optionel
+     }
+     products {
+              1.0 kg cast_iron allocate 100 percent
+     }
+}
+process cast_iron_production_rer {
+    products {
+         1.0 kg cast_iron allocate 100 percent
+    }
+}
+
+process composting_facility_construction_open_ch {
+    products {
+         1.0 u composting_facility_open allocate 100 percent
+    }
+    inputs {
+        50000.0 kg cast_iron  from market_for_cast_iron_glo() // On accepte 'cast_iron' car il n'y a plus d'ambiguité,
+            // on référence le process, donc le resolver resout sur 1 seul process
+        50000.0 kg cast_iron  from market_for_cast_iron_glo(carbureSize = 2 nm) // On peut passer un parametre au process
+    }
+}
+
+/**
+***
+*** Cas avec une Spec pour le processus
+*/
+spec Farm {
+   params {
+      yield = percent // On veut juste un type, pas un valeur
+      landuse = ha // Idem
+   }
+}
+
+process CornFarm implements Farm { // On n'a pas discuter comment le déclarer, implements ? ":" ?
+    params {
+       yield = 100 percent
+       landuse = 1 ha
+       another = 2 kg
+    }
+    products {
+        1 t corn(production = "Bio")
+     }
+    inputs {
+   }
+}
+
+// A l'usage
+process popcorn_bio {
+    products {
+        1 kg popcorn
+    }
+    inputs {
+        1 kg corn(production = "Bio") from Farm // On veut du corn bio d'une farm, peut importe le process
+                                                // Le from ici est une reference qui doit être résolue par le resolver
+        1 dl oil
+   }
+}
+
+
+/**
+* Comment gérer des paramêtres String ou Enum, par exemple pour un paramètre Country
+*/
+spec CPUGeo {
+    params {
+       geo : country // La aussi faut trouver un moyen d'exprimer une interface pour une String ou un enum
+    }
+}
+
+

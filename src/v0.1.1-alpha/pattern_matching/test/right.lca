@@ -1,0 +1,13 @@
+package pattern_matching.dynamic_file_load.right
+
+process matter_prod {
+    labels {
+        chirality = "right"
+    }
+    products {
+        1 kg m
+    }
+    emissions {
+        1 kg co2
+    }
+}

@@ -1,5 +1,7 @@
 package autodef
 
+import ef31
+
 process farm_carrot {
     products {
         1 kg carrot
@@ -23,6 +25,8 @@ process gly_proc {
     }
 
     emissions {
-        1 ha lu
+        1 kg co2
+        1 ha l_alanine(compartment="soil", sub_compartment="agricultural")
+        1 kg carbon_14(compartment="soil")
     }
 }

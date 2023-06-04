@@ -1,0 +1,26 @@
+package pattern_matching.case1
+
+process p {
+    products {
+        1 kg carrot
+    }
+    params {
+        geo = "FR"
+    }
+    inputs {
+        1 l water
+    }
+}
+
+process water_production {
+    labels {
+        geo = "FR"
+    }
+    products {
+        1 l water
+    }
+    emissions {
+        10 kg co2
+    }
+}
+

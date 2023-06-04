@@ -1,0 +1,55 @@
+package pattern_matching
+
+import ef31
+
+variables {
+    machine = "TORNOS"
+}
+
+unit foo {
+    symbol = "foo"
+    alias_for = 1 l
+}
+
+process p {
+    products {
+        1 kg carrot
+    }
+    params {
+        geo = "FR"
+    }
+    inputs {
+        1 foo water from water_production(x = 10 kg, y = machine) match ( geo = geo )
+    }
+    emissions {
+        1 kg cobalt_2_bis_2_ethylhexanoate(compartment="water", sub_compartment="long-term")
+    }
+}
+
+process water_production {
+    labels {
+        geo = "FR"
+    }
+    params {
+        x = 1 kg
+        y = "hello"
+    }
+    products {
+        1 l water
+    }
+    emissions {
+        10 kg co2
+    }
+}
+
+process water_production {
+    labels {
+        geo = "UK"
+    }
+    products {
+        1 l water
+    }
+    emissions {
+        1 kg co2
+    }
+}

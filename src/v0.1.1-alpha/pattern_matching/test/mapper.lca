@@ -1,0 +1,15 @@
+package pattern_matching.dynamic_file_load.mapper
+
+import pattern_matching.dynamic_file_load.right
+
+process mapper {
+    params {
+        chirality = "right"
+    }
+    products {
+        1 kg matter
+    }
+    inputs {
+        1 kg m from matter_prod match (chirality = chirality)
+    }
+}

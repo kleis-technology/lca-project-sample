@@ -1,0 +1,138 @@
+package demo_2023_05_17
+
+//import ei38
+
+/*
+Substance syntax v2
+- resolve logic
+- autocomplete
+- navigation, rename, find usage
+- above with ei38
+*/
+
+process p0 {
+    products {
+        1 kg p_carrot
+    }
+
+    emissions {
+        1 kg co2( compartment = "air" )
+        1 kg co2( compartment = "air", sub_compartment = "low pop" )
+        1 kg co2( compartment = "air", sub_compartment = "troposphere" )
+        1 kg co2( compartment = "air", sub_compartment = "low pop" )
+    }
+}
+
+substance co2 {
+    name = "CO2"
+    type = Emission
+    compartment = "air"
+    reference_unit = kg
+}
+
+substance co2 {
+    name = "CO2, low pop"
+    type = Emission
+    compartment = "air"
+    sub_compartment = "low pop"
+    reference_unit = kg
+}
+
+/*
+Autocomplete
+- quantity
+- parameter
+*/
+
+process p1 {
+    params {
+        foo = 1 kg
+        foofoo = 1 kg
+        bar = 2 kg
+        babar = 2 kg
+        an_average_density_from_brazil = 10 kg
+    }
+
+    variables {
+        z = foofoo + an_average_density_from_brazil
+    }
+    products {
+        z p1_out
+    }
+}
+
+process p2 {
+    inputs {
+        1 kg p1_out from p1(
+                    bar = 1 kg,
+                    foofoo = 1 kg,
+                    )
+    }
+}
+
+/*
+Operator associativity
+*/
+
+process p3 {
+    variables {
+        a = 2 kg
+        b = 2 kg
+        c = 2 kg
+    }
+
+    products {
+        1 kg p3_out
+    }
+
+    inputs {
+        a / b * c p3_test
+        ( a / b ) * c p3_control
+        a / ( b * c ) p3_anti
+    }
+}
+
+/*
+Scale vs exponent priority
+*/
+
+process p4 {
+    products {
+        1 kg p4_out
+    }
+    variables {
+        x = 10 mm^2
+    }
+
+    inputs {
+        10 mm^2 p4_test
+        10 ( mm^ 2 ) p4_control
+        ( 10 mm )^ 2 p4_anti
+    }
+}
+
+/*
+One reference unit per dimension
+*/
+
+unit abc {
+    symbol = "abc"
+    dimension = "abc"
+}
+
+unit cba {
+    symbol = "cba"
+    alias_for = 1 abc
+}
+
+process p5 {
+    products {
+        1 abc p5_out
+    }
+}
+
+/*
+Dryad, Resilio DB
+- model
+- generate from csv
+*/

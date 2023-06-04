@@ -1,0 +1,10 @@
+package annotator
+
+process p {
+    products {
+        1 kg a allocate 50 percent
+    }
+    products {
+        1 kg b allocate 50 percent
+    }
+}

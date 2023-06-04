@@ -1,0 +1,12 @@
+package pattern_matching.dynamic_file_load
+
+import pattern_matching.dynamic_file_load.mapper
+
+process main {
+    products {
+        1 kg main
+    }
+    inputs {
+        1 kg matter from mapper(chirality = "right")
+    }
+}
